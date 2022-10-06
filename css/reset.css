@@ -115,10 +115,11 @@ header {
     height: 100vh;
 }
 
-section {
-    margin-bottom: 200px;
+section, article {
+    margin-bottom: 280px;
 }
 
+article > h2,
 section > h2 {
     font-size: 0;
 }
