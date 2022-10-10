@@ -8,6 +8,18 @@
     <link rel="stylesheet" type="text/css" href="./css/samsonite.css">
     <link rel="icon" type="image/x-icon" href="./images/favicon.png">
     <title>Samsonite Korea</title>
+    <script>
+        function openPopup(url) { // 팝업창을 브라우저 크기를 파악해 정중앙에 띄움
+
+        const width = '800';
+        const height = '500';
+
+        let left = Math.round(window.screenX + (window.outerWidth/2) - (width/2));
+        let top = Math.round(window.screenY + (window.outerHeight/2) - (height/2));
+
+        return window.open(url, 'popup','width='+ width +', height='+ height +', left=' + left +',top=' + top);
+        }
+    </script>
 </head>
 <body>
     <div class="wrapper">
@@ -16,15 +28,15 @@
                 <div class="banner-menu-wrapper">
                     <div class="top-banner">
                         <div class="container">
-                            <a href="" class="title">모노사이트 오픈 2주년 기념: 10% 쿠폰 받기</a>
-                            <button type="button" class="banner-close"><img src="./images/banner-close-icon.png" alt="배너 닫기"></button>
+                            <a href="" target="_blank" class="title">모노사이트 오픈 2주년 기념: 10% 쿠폰 받기</a>
+                            <button type="button" class="banner-close"><img src="./images/x.svg" height="12" alt="배너 닫기"></button>
                         </div>
                     </div>
                     <div class="logo-menu">
                         <div class="container">
-                            <div class="logo-menu-flex">
+                            <div class="logo-menu-box flex">
                                 <div class="logo">
-                                    <h1><a href="./index.html"><img src="./images/samsonite-logo.png" alt="쌤소나이트 로고"></a></h1>
+                                    <h1><a href="./index.html"><img src="./images/samsonite.svg" alt="쌤소나이트 로고"></a></h1>
                                 </div>
                                 <div class="menu">
                                     <nav class="gnb">
@@ -39,297 +51,299 @@
                                     </nav>
                                 </div>
                                 <div class="icon">
-                                    <button type="button"><img src="./images/search-icon.png" alt="검색"></button>
-                                    <button type="button"><a href=""><img src="./images/cart-icon.png" alt="장바구니"></a></button>
-                                    <button type="button"><img src="./images/list-icon.png" alt="전체메뉴"></button>
+                                    <button type="button"><img src="./images/search.svg" alt="검색"></button>
+                                    <a><button type="button"><img src="./images/cart.svg" alt="장바구니"></button></a>
+                                    <button type="button"><img src="./images/list.svg" alt="전체메뉴"></button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="slide-con-wrapper">
-                    <div class="container">
+                <div class="container test">
+                    <div class="slide-con-wrapper">
                         <div class="slide-des">
                             <span>형태는 기능을 따른다</span>
                             <h2>ASPERO</h2>
                             <p>눈길을 끄는 스타일리시한 마감 처리를 통해<br>가벼움, 강도 및 신뢰성의 탁월한 조합을 바탕으로<br>경량 수하물의 기준을 재정의합니다.</p>
                         </div>
-                        <div class="slide-paging">
-                            <div class="num">
-                                <span class="now-page">01</span>
-                                <div class="indicator">
-                                    <div class="progress"></div>
-                                </div>
-                                <span class="total-page">05</span>
-                            </div>
-                            <div class="stop">
-                                <button type="button"><img src="./images/pause-icon.png" alt="일시정지"></button>
-                            </div>
+                    </div>
+                </div>
+                <div class="slide-paging">
+                    <div class="num">
+                        <span class="now-page">01</span>
+                        <div class="indicator">
+                            <div class="progress"></div>
                         </div>
+                        <span class="total-page">05</span>
+                    </div>
+                    <div class="stop">
+                        <button type="button"><img src="./images/pause.svg" alt="일시정지"></button>
                     </div>
                 </div>
                 <div class="slide-btn-wrapper">
                     <div class="slide-btn prev">
-                        <button type="button"><img src="./images/prev-arrow-icon.png"></button>
+                        <button type="button"><img src="./images/header-prev.svg"></button>
                     </div>
                     <div class="slide-btn next">
-                        <button type="button"><img src="./images/next-arrow-icon.png"></button>
+                        <button type="button"><img src="./images/header-next.svg"></button>
                     </div>
                 </div>
             </div>
         </header>
         <main>
-            <section class="item-display">
+            <section class="mainItem">
                 <h2>베스트 상품, 신상품, 이전에 본 상품</h2>
-                <div class="container">
-                    <div class="tabmenu">
-                        <h3 class="selected">BEST</h3>
-                        <h3>NEW</h3>
-                        <h3>HISTORY</h3>
-                    </div>
-                    <div class="category-more-wrapper">
-                        <div class="category">
-                            <ul>
-                                <li class="selected"><a href="">전체</a></li>
-                                <li><a href="">캐리어</a></li>
-                                <li><a href="">백팩</a></li>
-                                <li><a href="">가방</a></li>
-                                <li><a href="">악세사리</a></li>
-                            </ul>
+                <div class="mainItem-wrapper">
+                    <div class="container">
+                        <div class="tabmenu">
+                            <h3 class="selected">BEST</h3>
+                            <h3>NEW</h3>
+                            <h3>HISTORY</h3>
                         </div>
-                        <div class="move-page">
-                            <button type="button" class="btn more"><img src="./images/more-arrow-icon.png">더보기</button>
+                        <div class="category-more-wrapper">
+                            <div class="category">
+                                <ul>
+                                    <li class="selected"><a href="">전체</a></li>
+                                    <li><a href="">캐리어</a></li>
+                                    <li><a href="">백팩</a></li>
+                                    <li><a href="">가방</a></li>
+                                    <li><a href="">악세사리</a></li>
+                                </ul>
+                            </div>
+                            <div class="move-page">
+                                <a href=""><button type="button" class="btn more"><img src="./images/more-arrow.svg" class="more-arrow">더보기</button></a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="blank-show">
-                    <div class="blank-box"></div>
-                    <div class="show-box">
-                        <div class="item-scroll-wrapper">
-                            <div class="item-box">
-                                <div class="item-view">
-                                    <div class="i-label top">1</div>
-                                    <div class="i-img">
-                                        <a href=""><img src="./images/best_1_1.png" alt="SPINNER 55/20 EXP"></a>
-                                    </div>
-                                </div>
-                                <div class="item-des">
-                                    <div class="i-color">
-                                        <div class="outer"><div class="inner b-1-1"><a href="">&nbsp;</a></div></div>
-                                        <div class="outer"><div class="inner b-1-2"><a href="">&nbsp;</a></div></div>
-                                    </div>
-                                    <div class="i-info">
-                                        <div class="collection-title">
-                                            <span class="collection">MYTON</span>
-                                            <h4 class="title">SPINNER 55/20 EXP</h4>
-                                        </div>
-                                        <div class="score-price">
-                                            <div class="star-score">
-                                                <span class="star">★</span><span class="score">4.6</span>
-                                            </div>
-                                            <div class="percent-price">
-                                                <span class="percent">40%</span><span class="price">328,000</span><span class="won">원</span>
-                                            </div>
+                    <div class="blank-show-wrapper">
+                        <div class="blank-box"></div>
+                        <div class="show-box">
+                            <div class="item-scroll-wrapper">
+                                <div class="item-box">
+                                    <div class="item-view">
+                                        <div class="i-label top">1</div>
+                                        <div class="i-img">
+                                            <a href=""><img src="./images/best_1_1.png" alt="SPINNER 55/20 EXP"></a>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="item-box">
-                                <div class="item-view">
-                                    <div class="i-label top">2</div>
-                                    <div class="i-img">
-                                        <a href=""><img src="./images/best_2_1.png" alt="TOIIS C TRUNK"></a>
-                                    </div>
-                                </div>
-                                <div class="item-des">
-                                    <div class="i-color">
-                                        <div class="outer"><div class="inner b-2-1"><a href="">&nbsp;</a></div></div>
-                                        <div class="outer"><div class="inner b-2-2"><a href="">&nbsp;</a></div></div>
-                                        <div class="outer"><div class="inner b-2-3"><a href="">&nbsp;</a></div></div>
-                                        <div class="outer"><div class="inner b-2-4"><a href="">&nbsp;</a></div></div>
-                                    </div>
-                                    <div class="i-info">
-                                        <div class="collection-title">
-                                            <span class="collection">TOIIS C</span>
-                                            <h4 class="title">TOIIS C TRUNK</h4>
+                                    <div class="item-des">
+                                        <div class="i-color">
+                                            <div class="outer"><div class="inner b-1-1"><a href="">&nbsp;</a></div></div>
+                                            <div class="outer"><div class="inner b-1-2"><a href="">&nbsp;</a></div></div>
                                         </div>
-                                        <div class="score-price">
-                                            <div class="star-score">
-                                                <span class="star">★</span><span class="score">5.0</span>
+                                        <div class="i-info">
+                                            <div class="collection-title">
+                                                <span class="collection">MYTON</span>
+                                                <h4 class="title">SPINNER 55/20 EXP</h4>
                                             </div>
-                                            <div class="percent-price">
-                                                <span class="price">399,000</span><span class="won">원</span>
+                                            <div class="score-price">
+                                                <div class="star-score">
+                                                    <span class="star">★</span><span class="score">4.6</span>
+                                                </div>
+                                                <div class="percent-price">
+                                                    <span class="percent">40%</span><span class="price">328,000</span><span class="won">원</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="item-box">
-                                <div class="item-view">
-                                    <div class="i-label top">3</div>
-                                    <div class="i-img">
-                                        <a href=""><img src="./images/best_3_1.png" alt="BACKPACK L"></a>
-                                    </div>
-                                </div>
-                                <div class="item-des">
-                                    <div class="i-color">
-                                        <div class="outer"><div class="inner b-3-1"><a href="">&nbsp;</a></div></div>
-                                    </div>
-                                    <div class="i-info">
-                                        <div class="collection-title">
-                                            <span class="collection">NEW TIGRE</span>
-                                            <h4 class="title">BACKPACK L</h4>
-                                        </div>
-                                        <div class="score-price">
-                                            <div class="star-score">
-                                                <span class="star">★</span><span class="score">4.9</span>
-                                            </div>
-                                            <div class="percent-price">
-                                                <span class="percent">30%</span><span class="price">389,000</span><span class="won">원</span>
-                                            </div>
+                                <div class="item-box">
+                                    <div class="item-view">
+                                        <div class="i-label top">2</div>
+                                        <div class="i-img">
+                                            <a href=""><img src="./images/best_2_1.png" alt="TOIIS C TRUNK"></a>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="item-box">
-                                <div class="item-view">
-                                    <div class="i-label">4</div>
-                                    <div class="i-img">
-                                        <a href=""><img src="./images/best_4_1.png" alt="HOLIDAY BAG"></a>
-                                    </div>
-                                </div>
-                                <div class="item-des">
-                                    <div class="i-color">
-                                        <div class="outer"><div class="inner b-4-1"><a href="">&nbsp;</a></div></div>
-                                        <div class="outer"><div class="inner b-4-2"><a href="">&nbsp;</a></div></div>
-                                        <div class="outer"><div class="inner b-4-3"><a href="">&nbsp;</a></div></div>
-                                        <div class="outer"><div class="inner b-4-4"><a href="">&nbsp;</a></div></div>
-                                        <div class="outer"><div class="inner b-4-5"><a href="">&nbsp;</a></div></div>
-                                    </div>
-                                    <div class="i-info">
-                                        <div class="collection-title">
-                                            <span class="collection">MINTER</span>
-                                            <h4 class="title">HOLIDAY BAG</h4>
+                                    <div class="item-des">
+                                        <div class="i-color">
+                                            <div class="outer"><div class="inner b-2-1"><a href="">&nbsp;</a></div></div>
+                                            <div class="outer"><div class="inner b-2-2"><a href="">&nbsp;</a></div></div>
+                                            <div class="outer"><div class="inner b-2-3"><a href="">&nbsp;</a></div></div>
+                                            <div class="outer"><div class="inner b-2-4"><a href="">&nbsp;</a></div></div>
                                         </div>
-                                        <div class="score-price">
-                                            <div class="star-score">
-                                                <span class="star">★</span><span class="score">4.3</span>
+                                        <div class="i-info">
+                                            <div class="collection-title">
+                                                <span class="collection">TOIIS C</span>
+                                                <h4 class="title">TOIIS C TRUNK</h4>
                                             </div>
-                                            <div class="percent-price">
-                                                <span class="price">128,000</span><span class="won">원</span>
+                                            <div class="score-price">
+                                                <div class="star-score">
+                                                    <span class="star">★</span><span class="score">5.0</span>
+                                                </div>
+                                                <div class="percent-price">
+                                                    <span class="price">399,000</span><span class="won">원</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="item-box">
-                                <div class="item-view">
-                                    <div class="i-label">5</div>
-                                    <div class="i-img">
-                                        <a href=""><img src="./images/best_5_1.png" alt="SPINNER 75/28 EXP"></a>
-                                    </div>
-                                </div>
-                                <div class="item-des">
-                                    <div class="i-color">
-                                        <div class="outer"><div class="inner b-5-1"><a href="">&nbsp;</a></div></div>
-                                        <div class="outer"><div class="inner b-5-2"><a href="">&nbsp;</a></div></div>
-                                        <div class="outer"><div class="inner b-5-3"><a href="">&nbsp;</a></div></div>
-                                    </div>
-                                    <div class="i-info">
-                                        <div class="collection-title">
-                                            <span class="collection">ENOW</span>
-                                            <h4 class="title">SPINNER 75/28 EXP</h4>
+                                <div class="item-box">
+                                    <div class="item-view">
+                                        <div class="i-label top">3</div>
+                                        <div class="i-img">
+                                            <a href=""><img src="./images/best_3_1.png" alt="BACKPACK L"></a>
                                         </div>
-                                        <div class="score-price">
-                                            <div class="star-score">
-                                                <span class="star">★</span><span class="score">5.0</span>
+                                    </div>
+                                    <div class="item-des">
+                                        <div class="i-color">
+                                            <div class="outer"><div class="inner b-3-1"><a href="">&nbsp;</a></div></div>
+                                        </div>
+                                        <div class="i-info">
+                                            <div class="collection-title">
+                                                <span class="collection">NEW TIGRE</span>
+                                                <h4 class="title">BACKPACK L</h4>
                                             </div>
-                                            <div class="percent-price">
-                                                <span class="price">498,000</span><span class="won">원</span>
+                                            <div class="score-price">
+                                                <div class="star-score">
+                                                    <span class="star">★</span><span class="score">4.9</span>
+                                                </div>
+                                                <div class="percent-price">
+                                                    <span class="percent">30%</span><span class="price">389,000</span><span class="won">원</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="item-box">
-                                <div class="item-view">
-                                    <div class="i-label">6</div>
-                                    <div class="i-img">
-                                        <a href=""><img src="./images/best_6_1.png" alt="BACKPACK"></a>
-                                    </div>
-                                </div>
-                                <div class="item-des">
-                                    <div class="i-color">
-                                        <div class="outer"><div class="inner b-6-1"><a href="">&nbsp;</a></div></div>
-                                        <div class="outer"><div class="inner b-6-2"><a href="">&nbsp;</a></div></div>
-                                    </div>
-                                    <div class="i-info">
-                                        <div class="collection-title">
-                                            <span class="collection">LAWDON</span>
-                                            <h4 class="title">BACKPACK</h4>
-                                        </div>
-                                        <div class="score-price">
-                                            <div class="star-score">
-                                                <span class="star">★</span><span class="score">5.0</span>
-                                            </div>
-                                            <div class="percent-price">
-                                                <span class="price">159,000</span><span class="won">원</span>
-                                            </div>
+                                <div class="item-box">
+                                    <div class="item-view">
+                                        <div class="i-label">4</div>
+                                        <div class="i-img">
+                                            <a href=""><img src="./images/best_4_1.png" alt="HOLIDAY BAG"></a>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="item-box">
-                                <div class="item-view">
-                                    <div class="i-label">7</div>
-                                    <div class="i-img">
-                                        <a href=""><img src="./images/best_7_1.png" alt="BRIEFCASE"></a>
-                                    </div>
-                                </div>
-                                <div class="item-des">
-                                    <div class="i-color">
-                                        <div class="outer"><div class="inner b-7-1"><a href="">&nbsp;</a></div></div>
-                                        <div class="outer"><div class="inner b-7-2"><a href="">&nbsp;</a></div></div>
-                                    </div>
-                                    <div class="i-info">
-                                        <div class="collection-title">
-                                            <span class="collection">PINTANO</span>
-                                            <h4 class="title">BRIEFCASE</h4>
+                                    <div class="item-des">
+                                        <div class="i-color">
+                                            <div class="outer"><div class="inner b-4-1"><a href="">&nbsp;</a></div></div>
+                                            <div class="outer"><div class="inner b-4-2"><a href="">&nbsp;</a></div></div>
+                                            <div class="outer"><div class="inner b-4-3"><a href="">&nbsp;</a></div></div>
+                                            <div class="outer"><div class="inner b-4-4"><a href="">&nbsp;</a></div></div>
+                                            <div class="outer"><div class="inner b-4-5"><a href="">&nbsp;</a></div></div>
                                         </div>
-                                        <div class="score-price">
-                                            <div class="star-score">
-                                                <span class="star">★</span><span class="score">5.0</span>
+                                        <div class="i-info">
+                                            <div class="collection-title">
+                                                <span class="collection">MINTER</span>
+                                                <h4 class="title">HOLIDAY BAG</h4>
                                             </div>
-                                            <div class="percent-price">
-                                                <span class="percent">30%</span><span class="price">399,000</span><span class="won">원</span>
+                                            <div class="score-price">
+                                                <div class="star-score">
+                                                    <span class="star">★</span><span class="score">4.3</span>
+                                                </div>
+                                                <div class="percent-price">
+                                                    <span class="price">128,000</span><span class="won">원</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="item-box">
-                                <div class="item-view">
-                                    <div class="i-label">8</div>
-                                    <div class="i-img">
-                                        <a href=""><img src="./images/best_8_1.png" alt="LUGGAGE COVER M"></a>
+                                <div class="item-box">
+                                    <div class="item-view">
+                                        <div class="i-label">5</div>
+                                        <div class="i-img">
+                                            <a href=""><img src="./images/best_5_1.png" alt="SPINNER 75/28 EXP"></a>
+                                        </div>
+                                    </div>
+                                    <div class="item-des">
+                                        <div class="i-color">
+                                            <div class="outer"><div class="inner b-5-1"><a href="">&nbsp;</a></div></div>
+                                            <div class="outer"><div class="inner b-5-2"><a href="">&nbsp;</a></div></div>
+                                            <div class="outer"><div class="inner b-5-3"><a href="">&nbsp;</a></div></div>
+                                        </div>
+                                        <div class="i-info">
+                                            <div class="collection-title">
+                                                <span class="collection">ENOW</span>
+                                                <h4 class="title">SPINNER 75/28 EXP</h4>
+                                            </div>
+                                            <div class="score-price">
+                                                <div class="star-score">
+                                                    <span class="star">★</span><span class="score">5.0</span>
+                                                </div>
+                                                <div class="percent-price">
+                                                    <span class="price">498,000</span><span class="won">원</span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="item-des">
-                                    <div class="i-color">
-                                        <div class="outer"><div class="inner b-8-1"><a href="">&nbsp;</a></div></div>
-                                        <div class="outer"><div class="inner b-8-2"><a href="">&nbsp;</a></div></div>
-                                    </div>
-                                    <div class="i-info">
-                                        <div class="collection-title">
-                                            <span class="collection">TRAVEL LINK ACC</span>
-                                            <h4 class="title">LUGGAGE COVER M</h4>
+                                <div class="item-box">
+                                    <div class="item-view">
+                                        <div class="i-label">6</div>
+                                        <div class="i-img">
+                                            <a href=""><img src="./images/best_6_1.png" alt="BACKPACK"></a>
                                         </div>
-                                        <div class="score-price">
-                                            <div class="star-score">
-                                                <span class="star">★</span><span class="score">4.9</span>
+                                    </div>
+                                    <div class="item-des">
+                                        <div class="i-color">
+                                            <div class="outer"><div class="inner b-6-1"><a href="">&nbsp;</a></div></div>
+                                            <div class="outer"><div class="inner b-6-2"><a href="">&nbsp;</a></div></div>
+                                        </div>
+                                        <div class="i-info">
+                                            <div class="collection-title">
+                                                <span class="collection">LAWDON</span>
+                                                <h4 class="title">BACKPACK</h4>
                                             </div>
-                                            <div class="percent-price">
-                                                <span class="percent">30%</span><span class="price">34,000</span><span class="won">원</span>
+                                            <div class="score-price">
+                                                <div class="star-score">
+                                                    <span class="star">★</span><span class="score">5.0</span>
+                                                </div>
+                                                <div class="percent-price">
+                                                    <span class="price">159,000</span><span class="won">원</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item-box">
+                                    <div class="item-view">
+                                        <div class="i-label">7</div>
+                                        <div class="i-img">
+                                            <a href=""><img src="./images/best_7_1.png" alt="BRIEFCASE"></a>
+                                        </div>
+                                    </div>
+                                    <div class="item-des">
+                                        <div class="i-color">
+                                            <div class="outer"><div class="inner b-7-1"><a href="">&nbsp;</a></div></div>
+                                            <div class="outer"><div class="inner b-7-2"><a href="">&nbsp;</a></div></div>
+                                        </div>
+                                        <div class="i-info">
+                                            <div class="collection-title">
+                                                <span class="collection">PINTANO</span>
+                                                <h4 class="title">BRIEFCASE</h4>
+                                            </div>
+                                            <div class="score-price">
+                                                <div class="star-score">
+                                                    <span class="star">★</span><span class="score">5.0</span>
+                                                </div>
+                                                <div class="percent-price">
+                                                    <span class="percent">30%</span><span class="price">399,000</span><span class="won">원</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item-box">
+                                    <div class="item-view">
+                                        <div class="i-label">8</div>
+                                        <div class="i-img">
+                                            <a href=""><img src="./images/best_8_1.png" alt="LUGGAGE COVER M"></a>
+                                        </div>
+                                    </div>
+                                    <div class="item-des">
+                                        <div class="i-color">
+                                            <div class="outer"><div class="inner b-8-1"><a href="">&nbsp;</a></div></div>
+                                            <div class="outer"><div class="inner b-8-2"><a href="">&nbsp;</a></div></div>
+                                        </div>
+                                        <div class="i-info">
+                                            <div class="collection-title">
+                                                <span class="collection">TRAVEL LINK ACC</span>
+                                                <h4 class="title">LUGGAGE COVER M</h4>
+                                            </div>
+                                            <div class="score-price">
+                                                <div class="star-score">
+                                                    <span class="star">★</span><span class="score">4.9</span>
+                                                </div>
+                                                <div class="percent-price">
+                                                    <span class="percent">30%</span><span class="price">34,000</span><span class="won">원</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -339,15 +353,14 @@
                     </div>
                 </div>
             </section>
-            
             <section class="collection">
                 <h2>컬렉션</h2>
                 <div class="container">
                     <h3>COLLECTION</h3>
                 </div>
-                <div class="collection-wrapper">
-                    <div><a href=""><img src="./images/prev-icon.png" alt="이전 컬렉션" class="prev-btn"></a></div>
-                    <div class="poster-box">
+                <div class="collection-wrapper flex">
+                    <div><a href=""><img src="./images/section-prev.svg" alt="이전 컬렉션" class="prev-btn"></a></div>
+                    <div class="poster-info flex">
                         <div class="c-poster">
                             <img src="./images/collection_1_main.png" alt="STEM">
                         </div>
@@ -393,10 +406,9 @@
                             </div>
                         </div>
                     </div>
-                    <div><a href=""><img src="./images/next-icon.png" alt="다음 컬렉션" class="next-btn"></a></div>
+                    <div><a href=""><img src="./images/section-next.svg" alt="다음 컬렉션" class="next-btn"></a></div>
                 </div>
             </section>
-
             <section class="item-pick">
                 <h2>맞춤 검색</h2>
                 <div class="item-pick-wrapper">
@@ -426,7 +438,7 @@
                                     <span>위해 제품이 필요해요.</span>
                                 </div>
                             </div>
-                            <div class="condition-item-wrapper">
+                            <div class="condition-item-wrapper flex">
                                 <div class="item-box">
                                     <div class="item-view">
                                         <div class="i-img">
@@ -496,8 +508,8 @@
                                 </div>
                             </div>
                             <div class="move-page">
-                                <button type="button" class="btn more"><img src="./images/more-arrow-icon.png">관련 제품 더보기</button>
-                                <button type="button" class="btn another"><img src="./images/more-arrow-icon.png">다른 조건으로 검색</button>
+                                <a href=""><button type="button" class="btn more"><img src="./images/more-arrow.svg" class="more-arrow">관련 제품 더보기</button></a>
+                                <a href=""><button type="button" class="btn another"><img src="./images/more-arrow.svg" class="more-arrow">다른 조건으로 검색</button></a>
                             </div>
                         </div>
                     <div class="gradient-bg"/>
@@ -516,17 +528,17 @@
                             </div>
                             <div class="benefit b2 hidden">
                                 <div class="title-order"><span class="title">공식 온라인몰 혜택</span><span class="order">2</span></div>
-                                <h3>정확하고 신속한 배송 서비스</h3>
+                                <h3>정확하고 신속한 배송 서비스📦</h3>
                                 <p>본사가 운영하는 물류에서 직접 관리하여 최고의 서비스를 제공</p>
                             </div>
                             <div class="benefit b3 hidden">
                                 <div class="title-order"><span class="title">공식 온라인몰 혜택</span><span class="order">3</span></div>
-                                <h3>다양한 결제수단 제공</h3>
+                                <h3>다양한 결제수단 제공💳</h3>
                                 <p>정확하고 안전한 결제를 위한 기술적 보완도 함께 제공</p>
                             </div>
                             <div class="benefit b4 hidden">
                                 <div class="title-order"><span class="title">공식 온라인몰 혜택</span><span class="order">4</span></div>
-                                <h3>브랜드 컬렉션 전체 보유</h3>
+                                <h3>브랜드 컬렉션 전체 보유🛍️</h3>
                                 <p>쌤소나이트가 전개하는 모든 컬렉션에 대한 원 스탑 쇼핑을 제공</p>
                             </div>
                         </div>
@@ -554,8 +566,8 @@
                     <h3>EVENT</h3>
                 </div>
                 <div class="event-wrapper">
-                        <div><a href=""><img src="./images/prev-icon.png" alt="이전 이벤트" class="prev-btn"></a></div>
-                        <div class="event-box">
+                        <div><a href=""><img src="./images/section-prev.svg" alt="이전 이벤트" class="prev-btn"></a></div>
+                        <div class="event-box flex">
                             <div class="e-poster">
                                 <a href=""><img src="./images/event_1.png" alt="사이트 오픈 2주년 행사"></a>
                             </div>
@@ -566,7 +578,7 @@
                                 <time>📅&nbsp;&nbsp;<span class="start-date">2022. 09. 02</span>&nbsp;-&nbsp;<span class="end-date">09. 29</span></time>
                             </div>
                         </div>
-                        <div><a href=""><img src="./images/next-icon.png" alt="다음 이벤트" class="next-btn"></a></div>
+                        <div><a href=""><img src="./images/section-next.svg" alt="다음 이벤트" class="next-btn"></a></div>
                     </div>
             </section>
 
@@ -574,8 +586,8 @@
                 <h2>뉴스(팁 & 매장안내)</h2>
                 <div class="container">
                     <h3>NEWS</h3>
-                    <div class="news-wrapper">
-                        <a href="" class="discover">
+                    <div class="news-wrapper flex">
+                        <a href="https://www.samsonite.co.kr/art-of-packing.html" target="_blank" class="discover">
                             <div class="news-box">
                                 <div class="news-img">
                                     <img src="./images/discover.png" alt="DISCOVER">
@@ -586,12 +598,12 @@
                                         <p>캐리어 패킹, 가방 고르는 방법 등 궁금하지 않으신가요?<br>쌤소나이트가 여러분의 고민을 해결해드립니다.</p>
                                     </div>
                                     <div>
-                                        <img src="./images/news-arrow-icon.png" alt="DISCOVER 바로가기" class="news-btn">
+                                        <img src="./images/more-arrow.svg" alt="DISCOVER 바로가기" class="more-arrow">
                                     </div>
                                 </div>
                             </div>
                         </a>
-                        <a href="" class="store">
+                        <a href="https://www.samsonite.co.kr/stores?showMap=true&horizontalView=true" target="_blank" class="store">
                             <div class="news-box">
                                 <div class="news-img">
                                     <img src="./images/offline-store.png" alt="OFFLINE STORE">
@@ -602,7 +614,7 @@
                                         <p>쌤소나이트의 다양한 제품들을 직접 만나보세요.<br>매장별로 다양한 혜택이 준비되어 있습니다.</p>
                                     </div>
                                     <div>
-                                        <img src="./images/news-arrow-icon.png" alt="DISCOVER 바로가기" class="news-btn">
+                                        <img src="./images/more-arrow.svg" alt="OFFLINE STORE 바로가기" class="more-arrow">
                                     </div>
                                 </div>
                             </div>
@@ -610,22 +622,18 @@
                     </div>
                 </div>
             </section>
-
-            <section class="brand-story">
+            <section class="brandStory">
                 <h2>브랜드 스토리</h2>
-                <div class="brand-story-wrapper">
+                <div class="brandStory-wrapper">
                     <div class="brand-des">
                         <h3>쌤소나이트가<br>당신의 여정을 응원합니다</h3>
                         <p>최고의 제품을 위해 지속가능하고 혁신적인 재료와 생산 방법을 이용해<br>고객이 여행하는데 즐거움을 줄 수 있도록 노력합니다.</p>
                         <div class="move-page">
-                            <a href="">
-                                <button type="button" class="btn more"><img src="./images/more-white-arrow-icon.png">더보기</button>
-                            </a>
+                            <a href="https://www.samsonite.co.kr/brand-story.html" target="_blank"><button type="button" class="btn more"><img src="./images/more-arrow.svg" class="more-arrow">더보기</button></a>
                         </div>
                     </div>
                 </div>
             </section>
-
             <section class="sns">
                 <h2>소셜네트워크</h2>
                 <div class="container">
@@ -633,12 +641,15 @@
                     <div class="sns-wrapper">
                         <div class="sns-box">
                             <div class="text"><span>FOLLOW US</span></div>
-                            <div class="line"><img src="./images/black-line.png"></div>
-                            <div class="sns-icon">
-                                <a href=""><img src="./images/blog-sns-icon.png" alt="쌤소나이트 블로그"></a>
-                                <a href=""><img src="./images/facebook-sns-icon.png" alt="쌤소나이트 페이스북"></a>
-                                <a href=""><img src="./images/instagram-sns-icon.png" alt="쌤소나이트 인스타그램"></a>
-                                <a href="" class="youtube-icon"><img src="./images/youtube-sns-icon.png" alt="쌤소나이트 유튜브"></a>
+                            <div class="line">
+                                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                viewBox="0 0 60 2" enable-background="new 0 0 60 2" xml:space="preserve"><rect width="60" height="2"/></svg>
+                            </div>
+                            <div class="sns-icon bk flex">
+                                <a href="https://blog.naver.com/samsoniter" target="_blank"><img src="./images/sns-blog.svg" alt="쌤소나이트 블로그"></a>
+                                <a href="https://www.facebook.com/KoreaSamsonite" target="_blank"><img src="./images/sns-facebook.svg" alt="쌤소나이트 페이스북"></a>
+                                <a href="https://www.instagram.com/samsonitered_kr" target="_blank"><img src="./images/sns-instagram.svg" alt="쌤소나이트 인스타그램"></a>
+                                <a href="https://www.youtube.com/user/KoreaSamsonite" target="_blank"><img src="./images/sns-youtube.svg" alt="쌤소나이트 유튜브"></a>
                             </div>
                         </div>
                         <div class="sns-grid">
@@ -660,17 +671,20 @@
                 <div class="news-letter">
                     <form name="subscribe" class="subscribe" action="#">
                         <h2>쌤소나이트의 최신 소식을 받아보세요</h2>
-                        <input type="email" id="email" placeholder="이메일을 입력하세요">
+                        <div class="email-box">
+                            <input type="email" placeholder="ex) id@samsonite.co.kr">
+                            <button>JOIN</button>
+                        </div>
                     </form>
                 </div>
                 <div class="company">
                     <div class="container">
                         <div class="company-wrapper">
-                            <div class="row-1">
-                                <div class="all-menu">
+                            <div class="row-1 flex">
+                                <div class="all-menu flex">
                                     <div class="m1">
+                                        <h5>고객지원</h5>
                                         <ul>
-                                            <li><a href="">고객지원</a></li>
                                             <li><a href="">배송</a></li>
                                             <li><a href="">반품 및 환불</a></li>
                                             <li><a href="">단체 구매 · 대리점 개설</a></li>
@@ -679,8 +693,8 @@
                                         </ul>
                                     </div>
                                     <div class="m2">
+                                        <h5>회사소개</h5>
                                         <ul>
-                                            <li><a href="">회사소개</a></li>
                                             <li><a href="">브랜드 스토리</a></li>
                                             <li><a href="">매장 안내</a></li>
                                             <li><a href="">투자정보</a></li>
@@ -688,15 +702,15 @@
                                         </ul>
                                     </div>
                                     <div class="m3">
+                                        <h5>내 계정</h5>
                                         <ul>
-                                            <li><a href="">내 계정</a></li>
                                             <li><a href="">주문 상태 조회</a></li>
                                             <li><a href="">로그인하기</a></li>
                                         </ul>
                                     </div>
                                     <div class="m4">
+                                        <h5>기타</h5>
                                         <ul>
-                                            <li><a href="">기타</a></li>
                                             <li><a href="">사이트맵</a></li>
                                             <li><a href="">여행가방 잠금장치 설정</a></li>
                                             <li><a href="">WORLDWIDE SITE</a></li>
@@ -705,37 +719,60 @@
                                     </div>
                                 </div>
                                 <div class="brand-partner">
-                                    <h3>브랜드 파트너</h3>
+                                    <h4>브랜드 파트너</h4>
                                     <div class="brand-box">
-                                        <div><a href=""><img src="./images/american-tourister-icon.png" alt="american tourister"></a></div>
-                                        <div><a href=""><img src="./images/kamiliant-icon.png" alt="kamiliant"></a></div>
-                                        <div><a href=""><img src="./images/gregory-icon.png" alt="gregory"></a></div>
-                                        <div><a href=""><img src="./images/high-sierra-icon.png" alt="high sierra"></a></div>
+                                        <div><a href="https://www.americantourister.co.kr" target="_blank"><img src="./images/brand_american-tourister.svg" alt="american tourister" class="american-tourister"></a></div>
+                                        <div><a href="https://kamiliant.com" target="_blank"><img src="./images/brand_kamiliant.svg" alt="kamiliant" class="kamiliant"></a></div>
+                                        <div><a href="https://www.gregorypacks.co.kr" target="_blank"><img src="./images/brand_gregoty.svg" alt="gregory" class="gregory"></a></div>
+                                        <div><a href="https://shop.highsierra.com" target="_blank"><img src="./images/brand_high-sierra.svg" alt="high sierra" class="high-sierra"></a></div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row-2">
+                            <div class="row-2 flex">
                                 <div class="samsonite">
                                     <h3>쌤소나이트 코리아(주)</h3>
-                                    <p>서울특별시 강남구 테헤란로 522 홍우빌딩 12층</p>
-                                    <p><span>사업자등록번호 : 218-81-21342</span><a href="">사업자 정보 확인</a></p>
-                                    <p>통신판매신고번호 : 제 2008-서울강남-00754호</p>
-                                    <p><span>대표이사 : 최원식</span><span>개인정보 관리자 : 최원식</span></p>
-                                    <p>모든 저작권은 Samsonite IP Holdings S.àr.l 에게 있습니다.</p>
+                                    <div class="samsonite-info">
+                                        <address>서울특별시 강남구 테헤란로 522 홍우빌딩 12층</address>
+                                        <p class="c-num"><span>사업자등록번호 : 218-81-21342</span><a href="https://www.ftc.go.kr/www/bizCommList.do?key=232" target="_blank">사업자 정보 확인</a></p>
+                                        <p class="s-num">통신판매신고번호 : 제 2008-서울강남-00754호</p>
+                                        <p class="admin"><span>대표이사 : 최원식</span><span>개인정보 관리자 : 최원식</span></p>
+                                        <p class="copyright">모든 저작권은 Samsonite IP Holdings S.àr.l 에게 있습니다.</p>
+                                    </div>
                                 </div>
                                 <div class="inquiry">
-                                    <h3>고객센터</h3>
-                                    <a href="tel:02-567-2486">02-567-2486</a>
-                                    <p><span>평일</span><time>09:00 ~ 18:00</time></p>
-                                    <p><span>점심</span><time>12:00 ~ 13:00</time></p>
-                                    <p>(토, 일요일 및 공휴일 휴무)</p>
+                                    <h4>고객센터</h4>
+                                    <div class="inquiry-info">
+                                        <a href="tel:02-567-2486">02-567-2486</a>
+                                        <p><span>평일</span><time datetime="09:00">09:00</time>~<time datetime="18:00">18:00</time></p>
+                                        <p><span>점심</span><time datetime="12:00">12:00</time>~<time datetime="13:00">13:00</time></p>
+                                        <p class="holiday">(토, 일요일 및 공휴일 휴무)</p>
+                                        <div class="fax-email">
+                                            <p><span>FAX : </span>02-539-7771</p>
+                                            <p><span>E-mail  : </span><a href="mailto:help.kr@samsonite.com">help.kr@samsonite.com</a></p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="inicis-sns">
-
+                                <div class="inicis-sns flex">
+                                    <div class="inicis flex">
+                                        <div class="inicis-icon"><img src="./images/inicis.png" alt="이니시스" width="50"></div>
+                                        <div class="inicis-des">
+                                            <p>KG 이니시스를 통해 구매안전서비스를 제공합니다.</p>
+                                            <a onclick="openPopup('https://mark.inicis.com/mark/escrow_popup_v3.php?mid=samsonite3');">서비스 가입사실 확인</a>
+                                        </div>
+                                    </div>
+                                    <div class="sns-icon wh flex">
+                                        <a href="https://blog.naver.com/samsoniter" target="_blank"><img src="./images/sns-blog.svg" alt="쌤소나이트 블로그"></a>
+                                        <a href="https://www.facebook.com/KoreaSamsonite" target="_blank"><img src="./images/sns-facebook.svg" alt="쌤소나이트 페이스북"></a>
+                                        <a href="https://www.instagram.com/samsonitered_kr" target="_blank"><img src="./images/sns-instagram.svg" alt="쌤소나이트 인스타그램"></a>
+                                        <a href="https://www.youtube.com/user/KoreaSamsonite" target="_blank"><img src="./images/sns-youtube.svg" alt="쌤소나이트 유튜브"></a>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="row-3">
-                                xxx
+                            <div class="row-3 flex">
+                                <ul class="flex">
+                                    <li><a href="">이용약관</a></li>
+                                    <li><a href="">개인정보 처리 방침</a></li>
+                                </ul>
                             </div>
                         </div>
                     </div>

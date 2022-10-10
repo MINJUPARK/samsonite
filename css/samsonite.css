@@ -1,5 +1,6 @@
 @charset "utf-8";
 
+
 /* 공통 */
 .wrapper { 
     width: 100%; 
@@ -23,14 +24,37 @@
     letter-spacing: 0;
 }
 
+
+/* display flex 기본값 */
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* 버튼 안 화살표 */
+.more-arrow {
+    height: 12px;
+}
+
+
+/* 더보기 회색 화살표 */
+.mainItem .more-arrow,
+.item-pick .more-arrow {
+    filter: invert(49%) sepia(0%) saturate(1656%) hue-rotate(213deg) brightness(99%) contrast(92%);
+}
+
+
 /* 이전, 다음 버튼 */
 .prev-btn, .next-btn {
-    opacity: 0.5;
+    height: 60px;
+    opacity: 0.3;
 }
 
 .prev-btn:hover, .next-btn:hover {
     opacity: 1;
 }
+
 
 /* 특정 페이지 이동 버튼 */
 .move-page {
@@ -49,15 +73,17 @@
     border: 1px solid #7d7d7d;
     border-radius: 30px;
 }
+
 .move-page .btn img {
     margin-right: 5px;
 }
 
 .move-page .btn.another { margin-left: 30px; }
 
+
 /* 메인 이미지 슬라이드 */
 .main-slider {
-    position: absolute;
+    position: relative;
     width: 100%;
     height: 100vh;
     background: url('../images/main-slide-1.png') no-repeat;
@@ -113,44 +139,45 @@
     bottom: 0;
     width: 100%;
 }
-.logo-menu-flex {
-    display: flex;
-    justify-content: space-between;
+
+.logo-menu-box {
     align-items: center;
     padding-bottom: 30px;
 }
 
-.logo-menu-flex .logo {
+.logo-menu-box .logo {
     width: 200px;
-    height: 31px;
 }
 
-.logo-menu-flex .gnb ul {
+.logo-menu-box .logo * {
+    height: 32px;
+}
+
+.logo-menu-box .gnb ul {
     display: flex;
     justify-content: space-between;
     width: 600px;
 }
 
-.logo-menu-flex .gnb a {
+.logo-menu-box .gnb a {
     color: #ffffff;
     font: 22px 'Pretendard-Medium';
 }
 
-.logo-menu-flex .icon {
+.logo-menu-box .icon {
     display: flex;
     justify-content: space-between;
     width: 120px;
 }
 
-.logo-menu-flex .icon img {
+.logo-menu-box .icon img {
     height: 22px;
 }
 
 
 /* 메인 이미지슬라이드 내용 영역 */
-.slide-con-wrapper {
-    position: relative;
-    top: 235px;
+.container.test {
+    top: 20%;
 }
 
 
@@ -185,13 +212,12 @@
 
 /* 메인 이미지슬라이드 페이징 */
 .slide-paging {
-    float: right;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: absolute;
-    right: 0;
-    bottom: -185px;
+    right: calc((100% - 1200px) / 2);
+    bottom: 185px;
     width: 220px;
     height: 20px;
     padding-right: 10px;
@@ -222,7 +248,9 @@
     background-color: #ffffff;
 }
 
-.slide-paging .stop {
+.slide-paging .stop,
+.slide-paging .stop * {
+    width: 11px;
     height: 20px;
 }
 
@@ -233,34 +261,33 @@
     top: 50%;
 }
 .slide-btn button { opacity: 0.2; }
-.slide-btn.prev { left: 100px; }
-.slide-btn.next { right: 100px; }
+.slide-btn img { height: 57px; }
+.slide-btn.prev { left: 5.2%; }
+.slide-btn.next { right: 5.2%; }
 
 
 /* 베스트 상품, 신상품, 최근에 본 상품 */
-.blank-show {
+.blank-show-wrapper {
     display: flex; 
     width: 100%;
     height: 550px;
 }
 
-.blank-show .blank-box {
+.blank-show-wrapper .blank-box {
     width: calc((100% - 1200px) / 2 + 10px);  /* container의 한쪽 margin 값 + container의 한쪽 padding 값 */
     height: 100%;
 }
 
-.blank-show .show-box {
+.blank-show-wrapper .show-box {
     width: calc(100% - (100% - 1200px) / 2); /* 전체 크기 - blank_box */
     height: 100%; 
     padding-right: 51.42857142857143px; /* flex 사이 gap만큼 마지막 item에도 동일한 gap 추가, 2280px - (240px * 8) / 7) */
     overflow: overlay;
 }
 
-.item-display {
+.mainItem {
     margin-top: 120px;
 }
-
-main h3 { font: 55px 'Pretendard-Bold'; }
 
 .tabmenu {
     display: flex;
@@ -314,14 +341,11 @@ main h3 { font: 55px 'Pretendard-Bold'; }
     justify-content: space-between;
     width: 2280px;
     height: 497px;
-    /* overflow: scroll; */
-    /* background-color: red; */
 }
 
 .item-scroll-wrapper .item-box {
     width: 240px;
     height: 497px;
-    /* background-color: skyblue; */
 }
 
 .item-scroll-wrapper .item-view {
@@ -384,17 +408,15 @@ main h3 { font: 55px 'Pretendard-Bold'; }
     height: 16px;
     border-radius: 50%;
 }
+
 .i-color .inner.b-1-1 { background-color: #c6c5c5; }
 .i-color .inner.b-1-2 { background-color: #595c61; }
-
 .i-color .inner.b-2-1 { background-color: #e8985b; }
 .i-color .inner.b-2-2 { background-color: #c11125; }
 .i-color .inner.b-2-3 { background-color: #818d8d; }
 .i-color .inner.b-2-4,
 .i-color .inner.b-3-1,
-.i-color .inner.b-7-2 { 
-    background-color: #000000; 
-}
+.i-color .inner.b-7-2 { background-color: #000000; }
 .i-color .inner.b-4-1 { background-color: #e0e1d5; }
 .i-color .inner.b-4-2 { background-color: #dce6a7; }
 .i-color .inner.b-4-3 { background-color: #c8c1ed; }
@@ -417,12 +439,14 @@ main h3 { font: 55px 'Pretendard-Bold'; }
     height: 100%;
 }
 
+
 /* 제품 정보 영역 */
 .item-des .i-info {
     width: 100%;
     height: 84px;
     margin-top: 21px;
 }
+
 
 /* 제품 브랜드 및 제품명 */
 .collection-title .collection { font: 14px 'Pretendard-Light'; }
@@ -464,7 +488,7 @@ main h3 { font: 55px 'Pretendard-Bold'; }
     margin-left: 4px;
 }
 
-.item-display .scroll-bar {
+.mainItem .scroll-bar {
     position: relative;
     left: 25%;
     display: inline-block;
@@ -474,27 +498,25 @@ main h3 { font: 55px 'Pretendard-Bold'; }
     background-color: #ececec;
 }
 
-.item-display .scroll-bar .progress {
+.mainItem .scroll-bar .progress {
     position: absolute;
     width: 160px;
     height: 6px;
     background-color: #000000;
 }
 
-.poster-box, .event-box {
-    display: flex;
-    justify-content: space-between;
+.poster-info, .event-box {
     width: 1200px;
     padding: 0 10px;
 }
 
-.poster-box .c-poster,
-.poster-box .c-info {
+.poster-info .c-poster,
+.poster-info .c-info {
     width: 540px;
     height: 800px;
-    /* background-color: #7d7d7d; */
 }
-.poster-box .c-poster {
+
+.poster-info .c-poster {
     box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.3);
 }
 
@@ -502,7 +524,6 @@ main h3 { font: 55px 'Pretendard-Bold'; }
     width: 100%;
     height: 291px;
     padding: 56px 0 61px;
-    /* background-color: orange; */
 }
 
 .c-info .c-des h4 {
@@ -529,13 +550,11 @@ main h3 { font: 55px 'Pretendard-Bold'; }
     width: 100%;
     height: 509px;
     padding-bottom: 54px;
-    /* background-color: green; */
 }
 
 .c-item .c-item-box {
     width: 250px;
     height: 456px;
-    /* background-color: skyblue; */
 }
 
 .c-item-box .c-img {
@@ -548,21 +567,15 @@ main h3 { font: 55px 'Pretendard-Bold'; }
     width: 100%;
     height: 106px;
     padding: 23px 10px 0;
-    /* background-color: orange; */
 }
 
 
 .collection-wrapper {
-    display: flex;
-    justify-content: space-between;
     align-items: center;
     width: 1490px;
     height: 800px;
     margin: 99px auto 0;
-    /* background-color: #c8c1ed; */
 }
-
-
 
 .condition-wrapper {
     margin-top: 98px;
@@ -582,45 +595,38 @@ main h3 { font: 55px 'Pretendard-Bold'; }
 }
 
 .condition select {
+    text-align: center;
     padding-bottom: 3px;
     margin: 0 20px;
-    border: 0;
-    text-align: center;
     color: #1b43c2;
+    border: 0;
     border-bottom: 4px solid #1b43c2;
     background-color: transparent;
 }
 
 .condition-item-wrapper {
-    display: flex;
-    justify-content: space-between;
     width: 900px;
     height: 534px;
     margin: 54px auto 52px;
     z-index: 1;
-    /* background-color: skyblue; */
 }
 
 .condition-item-wrapper .item-box {
     width: 240px;
     height: 518px;
-    /* background-color: #9a9a9a; */
 }
 
 .condition-item-wrapper .item-box .item-view {
     position: relative;
     width: 100%;
     height: 350px;
-    /* background-color: #f3f3f3; */
 }
-
 
 .condition-item-wrapper .item-box .item-des {
     width: 100%;
     height: 185px;
     padding: 18px 10px 0;
     text-align: center;
-    /* background-color: yellow; */
 }
 .condition-item-wrapper .item-box .item-des .i-color {
     justify-content: center;
@@ -633,16 +639,18 @@ main h3 { font: 55px 'Pretendard-Bold'; }
 .condition-item-wrapper .star-score {
     margin-top: 22px;
 }
+
 .i-color .inner.p-1-1 { background-color: #ece3df; }
 .i-color .inner.p-2-1 { background-color: #2e2e2e; }
 .i-color .inner.p-3-1 { background-color: #c1d2d9; }
 .i-color .inner.p-3-2 { background-color: #e18876; }
 
+
 .item-pick-wrapper {
     position: relative;
 }
 
-.item-pick-wrapper .gradient-bg {
+.item-pick .gradient-bg {
     position: absolute;
     top: 350px;
     width: 100%;
@@ -651,6 +659,8 @@ main h3 { font: 55px 'Pretendard-Bold'; }
     z-index: -1;
 }
 
+
+/* 배너 */
 .banner-wrapper {
     display: flex;
     align-items: flex-end;
@@ -665,16 +675,17 @@ main h3 { font: 55px 'Pretendard-Bold'; }
     height: 100%;
 }
 
-.banner-wrapper .banner-box.left {
-    background: #1b43c2;
-}
-
 .banner-box .banner-container {
     width: 590px;
     height: 100%;
 }
 
-.banner-box .banner-container.left {
+/* 좌측 배너 */
+.banner-box.left {
+    background: #1b43c2;
+}
+
+.banner-container.left {
     position: absolute;
     right: 0;
 }
@@ -704,6 +715,7 @@ main h3 { font: 55px 'Pretendard-Bold'; }
     margin-left: 5px;
     font-family: 'Pretendard-Bold';
 }
+
 .banner-box .benefit h3,
 .banner-box .benefit p {
     color: #ffffff;
@@ -715,16 +727,14 @@ main h3 { font: 55px 'Pretendard-Bold'; }
 }
 
 .banner-box .benefit p {
-    margin-top: 12px;
+    margin-top: 9px;
     font-family: 'Pretendard-Light';
 }
 
 
+/* 우측 배너 */
 .banner-wrapper .banner-box.right {
-    /* display: flex;
-    position: relative; */
     height: 195px;
-    /* background: #ffd321; */
 }
 
 .banner-box .banner-container.right {
@@ -736,6 +746,7 @@ main h3 { font: 55px 'Pretendard-Bold'; }
     display: flex;
     align-items: flex-end;
 }
+
 .coupon .coupon-img {
     display: inline-block;
     width: 290px;
@@ -754,7 +765,6 @@ main h3 { font: 55px 'Pretendard-Bold'; }
     width: calc(590px - 290px); /* 쿠폰 이미지 영역 너비를 뺀 나머지 */
     height: 146px;
     padding: 35px 0;
-    /* background-color: red; */
 }
 
 .coupon .coupon-des h3 {
@@ -766,6 +776,8 @@ main h3 { font: 55px 'Pretendard-Bold'; }
     font: 35px 'Pretendard-SemiBold';
 }
 
+
+/* 이벤트 */
 .event-wrapper {
     display: flex;
     justify-content: space-between;
@@ -773,13 +785,13 @@ main h3 { font: 55px 'Pretendard-Bold'; }
     width: 1490px;
     height: 440px;
     margin: 99px auto 0;
-    /* background-color: #c8c1ed; */
 }
 
 .event-box .e-poster {
     width: 680px;
     height: 440px;
 }
+
 .event-box .e-poster {
     box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.3);
 }
@@ -805,6 +817,7 @@ main h3 { font: 55px 'Pretendard-Bold'; }
     color: white;
     letter-spacing: 0.02em;
 }
+
 .event-box .e-info h4 {
     margin-top: 15px;
     font-size: 42px;
@@ -826,16 +839,15 @@ main h3 { font: 55px 'Pretendard-Bold'; }
     font: 18px 'Pretendard-Light';
 }
 
+
+/* 소식 */
 .news-wrapper {
-    display: flex;
-    justify-content: space-between;
     margin-top: 87px;
 }
 
 .news-wrapper .news-box {
     width: 540px;
     height: 550px;
-    /* background-color: gray; */
 }
 
 .news-box .news-img {
@@ -863,13 +875,14 @@ main h3 { font: 55px 'Pretendard-Bold'; }
     line-height: 27px;
 }
 
-/* .discover:hover {
+.discover:hover, .store:hover {
     position: relative;
     top: -20px;
     box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.2);
-} */
+}
 
-.brand-story-wrapper {
+/* 브랜드 스토리 */
+.brandStory-wrapper {
     position: relative;
     width: 100%;
     height: 700px;
@@ -879,7 +892,7 @@ main h3 { font: 55px 'Pretendard-Bold'; }
     background-attachment: fixed;
 }
 
-.brand-story-wrapper::before {
+.brandStory-wrapper::before {
     content: '';
     position: absolute;
     left: 0;
@@ -918,6 +931,11 @@ main h3 { font: 55px 'Pretendard-Bold'; }
     border: 1px solid #ffffff;
 }
 
+.brand-des .move-page .more-arrow {
+    filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(218deg) brightness(102%) contrast(105%);
+}
+
+/* FOLLOW US */
 .sns-box {
     display: flex;
     justify-content: space-between;
@@ -931,34 +949,35 @@ main h3 { font: 55px 'Pretendard-Bold'; }
     width: 120px;
     height: 36px;
     text-align: center;
+    
+}
+.sns-box .text span {
+    line-height: 36px;
     font: 20px 'Pretendard-SemiBold';
 }
 
 .sns-box .line {
-    position: relative;
     width: 60px;
 }
 
-.sns-box .line img {
-    position: absolute;
-    top: 50%;
+.sns-box svg {
+    padding: 18px 0;
 }
 
-.sns-box .sns-icon {
-    display: flex;
-    justify-content: space-between;
+.sns-icon {
     align-items: center;
     width: 260px;
 }
 
-.sns-box .sns-icon a {
-    height: 36px;
+.sns-icon * {
+    height: 28px;
 }
 
-.sns-box .sns-icon .youtube-icon {
-    padding: 4px 0;
+.sns-icon.bk a:hover {
+    filter: invert(17%) sepia(96%) saturate(2388%) hue-rotate(223deg) brightness(98%) contrast(98%); /* 파란색 */
 }
 
+/* 인스타그램 피드 */
 .sns-grid {
     display: grid; 
     grid-template-columns: repeat(5, lfr);
@@ -1038,11 +1057,15 @@ main h3 { font: 55px 'Pretendard-Bold'; }
     background: url('../images/pic-8.png');
 }
 
+/* footer */
 .footer-wrapper {
     position: relative;
     width: 100%;
     height: 1080px;
 }
+
+
+/* 뉴스레터 구독 (캐리어 핸들) */
 .news-letter {
     position: absolute;
     left: 50%;
@@ -1054,6 +1077,46 @@ main h3 { font: 55px 'Pretendard-Bold'; }
     background: url('../images/luggage-handle.png') center no-repeat;
 }
 
+.news-letter .subscribe {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -65%);
+    text-align: center;
+}
+
+.news-letter .subscribe h2 {
+    font: 28px 'Pretendard-Bold';
+}
+
+.news-letter .email-box {
+    position: relative;
+    margin-top: 30px;
+}
+
+.news-letter .email-box input[type="email"] {
+    width: 380px;
+    padding: 15px 110px 15px 20px;
+    border: 1px solid #7d7d7d;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.news-letter .email-box button {
+    position: absolute;
+    width: 90px;
+    height: 40px;
+    margin: auto 0;
+    top: 0;
+    bottom: 0;
+    right: 10px;
+    color: #ffffff;
+    background-color: #1b43c2;
+    border-top-right-radius: 12px;
+}
+
+
+/* 전체메뉴, 브랜드파트너, 회사정보, 고객센터, 이니시스 등 (캐리어 바디) */
 .company {
     position: absolute;
     bottom: 0;
@@ -1062,83 +1125,234 @@ main h3 { font: 55px 'Pretendard-Bold'; }
     background: url('../images/luggage-body.png') center no-repeat;
 }
 
-.subscribe {
-    position: absolute;
-    top: 65%;
-    left: 50%;
-    transform: translate(-50%, -65%);
-    text-align: center;
-}
-
-.subscribe h2 {
-    font: 28px 'Pretendard-Bold';
-}
-
-.subscribe input[type="email"] {
-    width: 380px;
-    padding: 15px 20px;
-    margin-top: 30px;
-    box-shadow: rgb(0 0 0 / 15%) 0px 5px 20px 0px;
-    border: 0;
-    /* border-bottom: 1px solid #3a3a3a; */
+.company * {
+    color: white;
 }
 
 .company-wrapper {
+    position: relative;
     width: 100%;
     height: 720px;
     padding: 63px 0 34px;
-    color: white;
-}
-
-.row-1, .row-2, .row-3 {
-    display: flex;
-    justify-content: space-between;
 }
 
 
-.all-menu {
-    display: flex;
-    justify-content: space-between;
+/* 메뉴 전체, 브랜드 파트너 */
+.row-1 {
+    height: 242px;
+}
+
+
+/* 메뉴 전체 */
+.row-1 .all-menu {
     width: 740px;
-    height: 242px;
-    background-color: green;
 }
 
-.all-menu li a {
-    color: white;
+.row-1 .all-menu h5 {
+    font-size: 18px;
+    margin-bottom: 17px;
 }
 
-.brand-partner {
+.row-1 .all-menu li {
+    margin-bottom: 17px;
+}
+
+.row-1 .all-menu a:hover,
+.row-2 .samsonite a,
+.row-2 .fax-email a:hover,
+.row-2 .inicis-sns a,
+.row-3 a:hover {
+    text-decoration: underline;
+}
+
+
+/* 브랜드 파트너 */
+.row-1 .brand-partner {
     width: 340px;
-    height: 242px;
-    background-color: green;
 }
 
-.brand-box {
+.row-1 .brand-partner h4,
+.row-2 .inquiry h4 {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.brand-partner .brand-box {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
 
 .brand-box div {
+    position: relative;
     width: 170px;
     height: 100px;
 }
 
-.samsonite, .inicis-sns {
+.brand-box img {
+    position: absolute;
+}
+
+.brand-box .american-tourister {
+    width: 136px;
+    height: 37px;
+    left: 17px;
+    top: 43px;
+}
+
+.brand-box .kamiliant {
+    width: 84px;
+    height: 80px;
+    left: 43px;
+    top: 0px;
+    bottom: 20px;
+}
+
+.brand-box .gregory {
+    width: 92px;
+    height: 56px;
+    left: 36px;
+    top: 22px;
+}
+
+.brand-box .high-sierra {
+    width: 136px;
+    height: 55px;
+    left: 17px;
+    top: 23px;
+}
+
+
+/* 쌤소나이트코리아, 고객센터, 이니시스 및 SNS */
+.company .row-2 {
+    height: 240px;
+    margin-top: 60px;
+}
+
+
+/* 쌤소나이트코리아, 이니시스 */
+.row-2 .samsonite, .row-2 .inicis-sns {
     width: 340px;
-    background-color: yellowgreen;
-
 }
 
-.inquiry {
+.row-2 .samsonite {
+    position: relative;
+}
+
+.row-2 .samsonite h3 {
+    font-size: 22px;
+    text-align: left;
+    margin-bottom: 22px;
+}
+
+.row-2 .samsonite-info {
+    font-family: 'Pretendard-Light';
+}
+
+.row-2 .samsonite-info address {
+    margin-bottom: 18px;
+}
+
+.row-2 .samsonite-info p {
+    font-size: 15px;
+}
+
+.row-2 .samsonite-info .c-num {
+    margin-bottom: 5px;
+}
+
+.row-2 .samsonite-info .c-num a {
+    margin-left: 10px;
+}
+
+.row-2 .samsonite-info .s-num {
+    margin-bottom: 30px;
+}
+
+.row-2 .samsonite-info .admin span:last-child {
+    margin-left: 40px;
+}
+
+.row-2 .samsonite-info .copyright {
+    position: absolute;
+    bottom: 0;
+    font-size: 13px;
+}
+
+
+/* 고객센터 */
+.row-2 .inquiry {
+    position: relative;
     width: 230px;
-    background-color: green;
-
 }
 
-.row-3 {
-    width: 100%;
-    height: 15px;
-    background-color: orange;
+.row-2 .inquiry-info > a {
+    margin-bottom: 18px;
+    font: 32px 'Pretendard-Medium';
+}
 
+.row-2 .inquiry-info p {
+    margin-bottom: 5px;
+}
+
+.row-2 .inquiry-info span {
+    margin-right: 7px;
+}
+
+.row-2 .inquiry-info .holiday { 
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.row-2 .inquiry-info .fax-email {
+    position: absolute;
+    bottom: 0;
+    font-size: 15px;
+}
+
+
+/* 이니시스 */
+.row-2 .inicis-sns {
+    flex-wrap: wrap;
+    font-size: 14px;
+}
+
+.row-2 .inicis {
+    width: 100%;
+    height: 50px;
+}
+
+.row-2 .inicis .inicis-des {
+    position: relative;
+}
+
+.row-2 .inicis .inicis-des a {
+    position: absolute;
+    bottom: 0;
+}
+
+.row-2 .sns-icon.wh {
+    margin-left: auto; /* 우측 정렬 */
+    height: 40px;
+}
+
+.row-2 .sns-icon.wh img {
+    filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(218deg) brightness(102%) contrast(105%); /* 흰색으로 변경 */
+}
+
+
+/* footer 기본 메뉴 (약관 등) */
+.company .row-3 {
+    position: absolute;
+    bottom: 34px;
+    width: 100%;
+    height: 14px;
+    line-height: 14px;
+}
+
+.row-3 li {
+    margin-right: 40px;
+}
+
+.row-3 a {
+    font: 14px 'Pretendard-SemiBold';
 }

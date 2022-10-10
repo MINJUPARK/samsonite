@@ -119,6 +119,10 @@ section, article {
     margin-bottom: 280px;
 }
 
+main h3 { 
+    font: 55px 'Pretendard-Bold'; 
+}
+
 article > h2,
 section > h2 {
     font-size: 0;
@@ -131,14 +135,20 @@ li {
 }
 
 a {
-    color: black;
+    display: inline-block;
     text-decoration: none;
+    cursor: pointer;
+    color: black;
 }
 
 button {
     border: 0;
     background-color: transparent;
     cursor: pointer;
+}
+
+address {
+    font-style: normal;
 }
 
 header,
