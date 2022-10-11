@@ -7,25 +7,68 @@
     <link rel="stylesheet" type="text/css" href="./css/reset.css">
     <link rel="stylesheet" type="text/css" href="./css/samsonite.css">
     <link rel="icon" type="image/x-icon" href="./images/favicon.png">
-    <title>Samsonite Korea</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script>
+        $( document ).ready( function() {
+            
+            // 특정 위치에 도달하면 뉴스레터 영역 활성화
+            const newsOffset = $('.news-letter').offset();
+            $(window).on('scroll', function() {
+                if ($(document).scrollTop() > newsOffset.top - 1100) {
+                    $('.news-letter').css({"top":"0"});
+                    $('.news-letter .subscribe').css({"opacity":"1"});
+                    
+                } 
+            });
+
+            // 상단 팝업메뉴 닫기
+            $('.banner-close').click(function() {
+                $('.top-banner').addClass('hidden');
+            });
+
+            // 더보기 버튼 hover 시 배경색 및 화살표 색상 변경
+            $('.move-page .btn').hover(function() {
+                $(this).children().css({"filter" : "invert(100%) sepia(0%) saturate(7500%) hue-rotate(218deg) brightness(102%) contrast(105%)"});
+            });
+            $('.move-page .btn').mouseout(function() {
+                $(this).children().css({"filter" : "invert(49%) sepia(0%) saturate(1656%) hue-rotate(213deg) brightness(99%) contrast(92%)"});
+            });
+            
+            // 플로팅 버튼
+            $('.main-btn').click(function() {
+                // $(this).children().animate({rotate: '45deg'});
+                $('.top-btn').toggleClass('hidden');
+                $('.talk-btn').toggleClass('hidden');
+                // https://codepen.io/dsr/details/GEzdzN
+            });
+            
+            $('.inner').click(function() {
+                const imgTitle = $(this).attr('class');
+                const strArray = imgTitle.split(' ', 2); // strArray(1) = 파일제목
+                const origin = $(this).parents('.item-box').children('.item-view').children('.i-img').child('img');
+                
+                origin.addClass('hidden');
+                // alert(`<img src='./images/${strArray[1]}.png'>`);
+                origin.append(`<img src=./images/${strArray[1]}.png>`);
+            });
+        });
+
         function openPopup(url) { // 팝업창을 브라우저 크기를 파악해 정중앙에 띄움
+            const width = '800';
+            const height = '500';
+            let left = Math.round(window.screenX + (window.outerWidth/2) - (width/2));
+            let top = Math.round(window.screenY + (window.outerHeight/2) - (height/2));
 
-        const width = '800';
-        const height = '500';
-
-        let left = Math.round(window.screenX + (window.outerWidth/2) - (width/2));
-        let top = Math.round(window.screenY + (window.outerHeight/2) - (height/2));
-
-        return window.open(url, 'popup','width='+ width +', height='+ height +', left=' + left +',top=' + top);
+            return window.open(url, 'popup','width='+ width +', height='+ height +', left=' + left +', top=' + top);
         }
     </script>
+    <title>Samsonite Korea</title>
 </head>
 <body>
-    <div class="wrapper">
-        <header>
+    <div class="wrap">
+        <header id="top">
             <div class="main-slider">
-                <div class="banner-menu-wrapper">
+                <div class="banner-menu-wrap">
                     <div class="top-banner">
                         <div class="container">
                             <a href="" target="_blank" class="title">모노사이트 오픈 2주년 기념: 10% 쿠폰 받기</a>
@@ -60,7 +103,7 @@
                     </div>
                 </div>
                 <div class="container test">
-                    <div class="slide-con-wrapper">
+                    <div class="slide-con-wrap">
                         <div class="slide-des">
                             <span>형태는 기능을 따른다</span>
                             <h2>ASPERO</h2>
@@ -80,7 +123,7 @@
                         <button type="button"><img src="./images/pause.svg" alt="일시정지"></button>
                     </div>
                 </div>
-                <div class="slide-btn-wrapper">
+                <div class="slide-btn-wrap">
                     <div class="slide-btn prev">
                         <button type="button"><img src="./images/header-prev.svg"></button>
                     </div>
@@ -93,21 +136,21 @@
         <main>
             <section class="mainItem">
                 <h2>베스트 상품, 신상품, 이전에 본 상품</h2>
-                <div class="mainItem-wrapper">
+                <div class="mainItem-wrap">
                     <div class="container">
                         <div class="tabmenu">
                             <h3 class="selected">BEST</h3>
                             <h3>NEW</h3>
                             <h3>HISTORY</h3>
                         </div>
-                        <div class="category-more-wrapper">
+                        <div class="category-more-wrap">
                             <div class="category">
                                 <ul>
-                                    <li class="selected"><a href="">전체</a></li>
-                                    <li><a href="">캐리어</a></li>
-                                    <li><a href="">백팩</a></li>
-                                    <li><a href="">가방</a></li>
-                                    <li><a href="">악세사리</a></li>
+                                    <li class="selected">전체</li>
+                                    <li>캐리어</li>
+                                    <li>백팩</li>
+                                    <li>가방</li>
+                                    <li>악세사리</li>
                                 </ul>
                             </div>
                             <div class="move-page">
@@ -115,10 +158,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="blank-show-wrapper">
+                    <div class="blank-show-wrap">
                         <div class="blank-box"></div>
                         <div class="show-box">
-                            <div class="item-scroll-wrapper">
+                            <div class="item-scroll-wrap">
                                 <div class="item-box">
                                     <div class="item-view">
                                         <div class="i-label top">1</div>
@@ -128,8 +171,8 @@
                                     </div>
                                     <div class="item-des">
                                         <div class="i-color">
-                                            <div class="outer"><div class="inner b-1-1"><a href="">&nbsp;</a></div></div>
-                                            <div class="outer"><div class="inner b-1-2"><a href="">&nbsp;</a></div></div>
+                                            <div class="outer"><div class="inner b-1-1"><a href="" onclick="return false;">&nbsp;</a></div></div>
+                                            <div class="outer"><div class="inner b-1-2"><a href="" onclick="return false;">&nbsp;</a></div></div>
                                         </div>
                                         <div class="i-info">
                                             <div class="collection-title">
@@ -358,11 +401,11 @@
                 <div class="container">
                     <h3>COLLECTION</h3>
                 </div>
-                <div class="collection-wrapper flex">
+                <div class="collection-wrap flex">
                     <div><a href=""><img src="./images/section-prev.svg" alt="이전 컬렉션" class="prev-btn"></a></div>
                     <div class="poster-info flex">
                         <div class="c-poster">
-                            <img src="./images/collection_1_main.png" alt="STEM">
+                            <img src="./images/collection_1.png" alt="STEM">
                         </div>
                         <div class="c-info">
                             <div class="c-des">
@@ -409,12 +452,12 @@
                     <div><a href=""><img src="./images/section-next.svg" alt="다음 컬렉션" class="next-btn"></a></div>
                 </div>
             </section>
-            <section class="item-pick">
+            <section class="itemPick">
                 <h2>맞춤 검색</h2>
-                <div class="item-pick-wrapper">
+                <div class="itemPick-wrap">
                     <div class="container">
                         <h3>ITEM PICK</h3>
-                            <div class="condition-wrapper">
+                            <div class="condition-wrap">
                                 <div class="condition c1">
                                     <span>나는</span>
                                     <div class="condition-box">
@@ -438,7 +481,7 @@
                                     <span>위해 제품이 필요해요.</span>
                                 </div>
                             </div>
-                            <div class="condition-item-wrapper flex">
+                            <div class="condition-item-wrap flex">
                                 <div class="item-box">
                                     <div class="item-view">
                                         <div class="i-img">
@@ -515,10 +558,9 @@
                     <div class="gradient-bg"/>
                 </div>
             </section>
-
             <article class="banner">
                 <h2>BANNER</h2>
-                <div class="banner-wrapper">
+                <div class="banner-wrap">
                     <div class="banner-box left">
                         <div class="banner-container left">
                             <div class="benefit b1">
@@ -543,50 +585,52 @@
                             </div>
                         </div>
                     </div>
-                    <div class="banner-box right">
-                        <div class="banner-container right">
-                            <div class="coupon">
-                                <div class="coupon-img">
-                                    <img src="./images/discount-coupon.png" alt="쿠폰 아이콘" class="big-coupon">
-                                    <img src="./images/discount-coupon-mini.png" alt="쿠폰 아이콘" class="small-coupon">
-                                </div>
-                                <div class="coupon-des">
-                                    <p>지금 회원가입만 해도</p>
-                                    <h3>10%<strong>쿠폰 지급</strong></h3>
+                    <a href="https://www.samsonite.co.kr/register" target="_blank" class="member-join">
+                        <div class="banner-box right">
+                            <div class="banner-container right">
+                                <div class="coupon">
+                                    <div class="coupon-img">
+                                        <img src="./images/discount-coupon.png" alt="쿠폰 아이콘" class="big-coupon">
+                                        <img src="./images/discount-coupon-mini.png" alt="쿠폰 아이콘" class="small-coupon">
+                                    </div>
+                                    <div class="coupon-des">
+                                        <p>지금 회원가입만 해도</p>
+                                        <h3>10%<strong>쿠폰 지급</strong></h3>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </a>
             </article>
-
             <section class="event">
                 <h2>이벤트</h2>
                 <div class="container">
                     <h3>EVENT</h3>
                 </div>
-                <div class="event-wrapper">
+                <div class="event-wrap">
                         <div><a href=""><img src="./images/section-prev.svg" alt="이전 이벤트" class="prev-btn"></a></div>
                         <div class="event-box flex">
                             <div class="e-poster">
-                                <a href=""><img src="./images/event_1.png" alt="사이트 오픈 2주년 행사"></a>
+                                <a href="https://www.samsonite.co.kr/promotion/soev_22_2ndanniversary" target="_blank"><img src="./images/event_1.png" alt="사이트 오픈 2주년 행사"></a>
                             </div>
                             <div class="e-info">
                                 <span>ONLINE</span>
                                 <h4>사이트 오픈 2주년 행사</h4>
                                 <p>100% 페이백, 네이버 포인트 및 사은품 증정!<br>고객의 성원에 항상 보답하겠습니다🎉</p>
-                                <time>📅&nbsp;&nbsp;<span class="start-date">2022. 09. 02</span>&nbsp;-&nbsp;<span class="end-date">09. 29</span></time>
+                                <p>
+                                    📅&nbsp;&nbsp;<time datetime="2022-09-02" class="start-date">2022. 09. 02</time>
+                                    &nbsp;-&nbsp;<time datetime="2022-09-29" class="end-date">2022. 09. 29<time>
+                                </p>
                             </div>
                         </div>
                         <div><a href=""><img src="./images/section-next.svg" alt="다음 이벤트" class="next-btn"></a></div>
                     </div>
             </section>
-
             <section class="news">
                 <h2>뉴스(팁 & 매장안내)</h2>
                 <div class="container">
                     <h3>NEWS</h3>
-                    <div class="news-wrapper flex">
+                    <div class="news-wrap flex">
                         <a href="https://www.samsonite.co.kr/art-of-packing.html" target="_blank" class="discover">
                             <div class="news-box">
                                 <div class="news-img">
@@ -624,7 +668,7 @@
             </section>
             <section class="brandStory">
                 <h2>브랜드 스토리</h2>
-                <div class="brandStory-wrapper">
+                <div class="brandStory-wrap">
                     <div class="brand-des">
                         <h3>쌤소나이트가<br>당신의 여정을 응원합니다</h3>
                         <p>최고의 제품을 위해 지속가능하고 혁신적인 재료와 생산 방법을 이용해<br>고객이 여행하는데 즐거움을 줄 수 있도록 노력합니다.</p>
@@ -638,7 +682,7 @@
                 <h2>소셜네트워크</h2>
                 <div class="container">
                     <h3>SNS</h3>
-                    <div class="sns-wrapper">
+                    <div class="sns-wrap">
                         <div class="sns-box">
                             <div class="text"><span>FOLLOW US</span></div>
                             <div class="line">
@@ -667,19 +711,19 @@
             </section>
         </main>
         <footer>
-            <div class="footer-wrapper">
+            <div class="footer-wrap">
                 <div class="news-letter">
                     <form name="subscribe" class="subscribe" action="#">
                         <h2>쌤소나이트의 최신 소식을 받아보세요</h2>
                         <div class="email-box">
                             <input type="email" placeholder="ex) id@samsonite.co.kr">
-                            <button>JOIN</button>
+                            <button></button>
                         </div>
                     </form>
                 </div>
                 <div class="company">
                     <div class="container">
-                        <div class="company-wrapper">
+                        <div class="company-wrap">
                             <div class="row-1 flex">
                                 <div class="all-menu flex">
                                     <div class="m1">
@@ -711,10 +755,10 @@
                                     <div class="m4">
                                         <h5>기타</h5>
                                         <ul>
-                                            <li><a href="">사이트맵</a></li>
-                                            <li><a href="">여행가방 잠금장치 설정</a></li>
-                                            <li><a href="">WORLDWIDE SITE</a></li>
                                             <li><a href="">여행가방 가이드</a></li>
+                                            <li><a href="">여행가방 잠금장치 설정</a></li>
+                                            <li><a href="">사이트맵</a></li>
+                                            <li><a href="">WORLDWIDE SITE</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -770,8 +814,8 @@
                             </div>
                             <div class="row-3 flex">
                                 <ul class="flex">
-                                    <li><a href="">이용약관</a></li>
-                                    <li><a href="">개인정보 처리 방침</a></li>
+                                    <li><a href="https://www.samsonite.co.kr/privacy-policy.html" target="_blank">이용약관</a></li>
+                                    <li><a href="https://www.samsonite.co.kr/personal-information-collection-statement.html" target="_blank">개인정보 처리 방침</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -779,6 +823,17 @@
                 </div>
             </div>
         </footer>
-    </div> <!-- wrapper -->
+        <div class="floating-btn">
+            <a class="main-btn"><img src="./images/plus.svg" alt="플로팅 메뉴"></a>
+            <ul class="inside-box">
+                <li>
+                    <a href="https://api.happytalk.io/api/kakao/chat_open?yid=%40%EC%8C%A4%EC%86%8C%EB%82%98%EC%9D%B4%ED%8A%B8%EA%B3%B5%EC%8B%9D%EC%98%A8%EB%9D%BC%EC%9D%B8%EB%AA%B0&site_id=1000216913&category_id=66035&division_id=66036" target="_blank" class="talk-btn"><img src="./images/talk.svg" alt="문의하기"></a>
+                </li>
+                <li>
+                    <a href="#top" class="top-btn"><img src="./images/top.svg" alt="위로가기"></a>
+                </li>
+            </ul>
+        </div>
+    </div> <!-- wrap -->
 </body>
 </html>
