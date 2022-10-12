@@ -120,7 +120,9 @@ section, article {
 }
 
 main h3 { 
-    font: 55px 'Pretendard-Bold'; 
+    font: 55px 'Pretendard-Bold';
+    text-align: center;
+    letter-spacing: 0;
 }
 
 article > h2,
@@ -158,6 +160,20 @@ article,
 section,
 footer {
     display: block;
+}
+
+.wrap { 
+    width: 100%; 
+    overflow: hidden;
+}
+
+.hidden {
+    display: none;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
 }
 
 ::-webkit-scrollbar {

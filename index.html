@@ -1,67 +1,15 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+    <base target="_blank" rel="noopener">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./css/reset.css">
     <link rel="stylesheet" type="text/css" href="./css/samsonite.css">
     <link rel="icon" type="image/x-icon" href="./images/favicon.png">
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-    <script>
-        $( document ).ready( function() {
-            
-            // 특정 위치에 도달하면 뉴스레터 영역 활성화
-            const newsOffset = $('.news-letter').offset();
-            $(window).on('scroll', function() {
-                if ($(document).scrollTop() > newsOffset.top - 1100) {
-                    $('.news-letter').css({"top":"0"});
-                    $('.news-letter .subscribe').css({"opacity":"1"});
-                    
-                } 
-            });
-
-            // 상단 팝업메뉴 닫기
-            $('.banner-close').click(function() {
-                $('.top-banner').addClass('hidden');
-            });
-
-            // 더보기 버튼 hover 시 배경색 및 화살표 색상 변경
-            $('.move-page .btn').hover(function() {
-                $(this).children().css({"filter" : "invert(100%) sepia(0%) saturate(7500%) hue-rotate(218deg) brightness(102%) contrast(105%)"});
-            });
-            $('.move-page .btn').mouseout(function() {
-                $(this).children().css({"filter" : "invert(49%) sepia(0%) saturate(1656%) hue-rotate(213deg) brightness(99%) contrast(92%)"});
-            });
-            
-            // 플로팅 버튼
-            $('.main-btn').click(function() {
-                // $(this).children().animate({rotate: '45deg'});
-                $('.top-btn').toggleClass('hidden');
-                $('.talk-btn').toggleClass('hidden');
-                // https://codepen.io/dsr/details/GEzdzN
-            });
-            
-            $('.inner').click(function() {
-                const imgTitle = $(this).attr('class');
-                const strArray = imgTitle.split(' ', 2); // strArray(1) = 파일제목
-                const origin = $(this).parents('.item-box').children('.item-view').children('.i-img').child('img');
-                
-                origin.addClass('hidden');
-                // alert(`<img src='./images/${strArray[1]}.png'>`);
-                origin.append(`<img src=./images/${strArray[1]}.png>`);
-            });
-        });
-
-        function openPopup(url) { // 팝업창을 브라우저 크기를 파악해 정중앙에 띄움
-            const width = '800';
-            const height = '500';
-            let left = Math.round(window.screenX + (window.outerWidth/2) - (width/2));
-            let top = Math.round(window.screenY + (window.outerHeight/2) - (height/2));
-
-            return window.open(url, 'popup','width='+ width +', height='+ height +', left=' + left +', top=' + top);
-        }
-    </script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script type="text/javascript" src="./script/samsonite.js"></script>
     <title>Samsonite Korea</title>
 </head>
 <body>
@@ -71,7 +19,7 @@
                 <div class="banner-menu-wrap">
                     <div class="top-banner">
                         <div class="container">
-                            <a href="" target="_blank" class="title">모노사이트 오픈 2주년 기념: 10% 쿠폰 받기</a>
+                            <a href="https://www.samsonite.co.kr/promotion/soev_2209_socoupon" class="title">이 가을 보다 풍성히, 10월 쿠폰팩 혜택 바로가기</a>
                             <button type="button" class="banner-close"><img src="./images/x.svg" height="12" alt="배너 닫기"></button>
                         </div>
                     </div>
@@ -84,12 +32,12 @@
                                 <div class="menu">
                                     <nav class="gnb">
                                         <ul>
-                                            <li><a href="">캐리어</a></li>
-                                            <li><a href="">백팩</a></li>
-                                            <li><a href="">가방</a></li>
-                                            <li><a href="">악세사리</a></li>
-                                            <li><a href="">이벤트</a></li>
-                                            <li><a href="">소식</a></li>
+                                            <li><a>캐리어</a></li>
+                                            <li><a>백팩</a></li>
+                                            <li><a>가방</a></li>
+                                            <li><a>악세사리</a></li>
+                                            <li><a>이벤트</a></li>
+                                            <li><a>소식</a></li>
                                         </ul>
                                     </nav>
                                 </div>
@@ -102,7 +50,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="container test">
+                <div class="container v2">
                     <div class="slide-con-wrap">
                         <div class="slide-des">
                             <span>형태는 기능을 따른다</span>
@@ -166,13 +114,13 @@
                                     <div class="item-view">
                                         <div class="i-label top">1</div>
                                         <div class="i-img">
-                                            <a href=""><img src="./images/best_1_1.png" alt="SPINNER 55/20 EXP"></a>
+                                            <a href="https://www.samsonite.co.kr/samsonite/myton/spinner-55/20-exp/ss-135414-5406.html"><img src="./images/b-1-1.png" alt="SPINNER 55/20 EXP"></a>
                                         </div>
                                     </div>
                                     <div class="item-des">
                                         <div class="i-color">
-                                            <div class="outer"><div class="inner b-1-1"><a href="" onclick="return false;">&nbsp;</a></div></div>
-                                            <div class="outer"><div class="inner b-1-2"><a href="" onclick="return false;">&nbsp;</a></div></div>
+                                            <div class="outer selected"><div class="inner b-1-1"><a></a></div></div>
+                                            <div class="outer"><div class="inner b-1-2"><a></a></div></div>
                                         </div>
                                         <div class="i-info">
                                             <div class="collection-title">
@@ -194,15 +142,15 @@
                                     <div class="item-view">
                                         <div class="i-label top">2</div>
                                         <div class="i-img">
-                                            <a href=""><img src="./images/best_2_1.png" alt="TOIIS C TRUNK"></a>
+                                            <a href="https://www.samsonite.co.kr/samsonite-red/toiis-c/toiis-c-trunk/ss-145861-8955.html"><img src="./images/b-2-1.png" alt="TOIIS C TRUNK"></a>
                                         </div>
                                     </div>
                                     <div class="item-des">
                                         <div class="i-color">
-                                            <div class="outer"><div class="inner b-2-1"><a href="">&nbsp;</a></div></div>
-                                            <div class="outer"><div class="inner b-2-2"><a href="">&nbsp;</a></div></div>
-                                            <div class="outer"><div class="inner b-2-3"><a href="">&nbsp;</a></div></div>
-                                            <div class="outer"><div class="inner b-2-4"><a href="">&nbsp;</a></div></div>
+                                            <div class="outer selected"><div class="inner b-2-1"><a></a></div></div>
+                                            <div class="outer"><div class="inner b-2-2"><a></a></div></div>
+                                            <div class="outer"><div class="inner b-2-3"><a></a></div></div>
+                                            <div class="outer"><div class="inner b-2-4"><a></a></div></div>
                                         </div>
                                         <div class="i-info">
                                             <div class="collection-title">
@@ -224,12 +172,12 @@
                                     <div class="item-view">
                                         <div class="i-label top">3</div>
                                         <div class="i-img">
-                                            <a href=""><img src="./images/best_3_1.png" alt="BACKPACK L"></a>
+                                            <a href="https://www.samsonite.co.kr/samsonite/new-tigre/backpack-l/ss-142264-1041.html"><img src="./images/b-3-1.png" alt="BACKPACK L"></a>
                                         </div>
                                     </div>
                                     <div class="item-des">
                                         <div class="i-color">
-                                            <div class="outer"><div class="inner b-3-1"><a href="">&nbsp;</a></div></div>
+                                            <div class="outer selected"><div class="inner b-3-1"><a></a></div></div>
                                         </div>
                                         <div class="i-info">
                                             <div class="collection-title">
@@ -251,16 +199,16 @@
                                     <div class="item-view">
                                         <div class="i-label">4</div>
                                         <div class="i-img">
-                                            <a href=""><img src="./images/best_4_1.png" alt="HOLIDAY BAG"></a>
+                                            <a href="https://www.samsonite.co.kr/samsonite/minter/holiday-bag/ss-139941-1451.html"><img src="./images/b-4-1.png" alt="HOLIDAY BAG"></a>
                                         </div>
                                     </div>
                                     <div class="item-des">
                                         <div class="i-color">
-                                            <div class="outer"><div class="inner b-4-1"><a href="">&nbsp;</a></div></div>
-                                            <div class="outer"><div class="inner b-4-2"><a href="">&nbsp;</a></div></div>
-                                            <div class="outer"><div class="inner b-4-3"><a href="">&nbsp;</a></div></div>
-                                            <div class="outer"><div class="inner b-4-4"><a href="">&nbsp;</a></div></div>
-                                            <div class="outer"><div class="inner b-4-5"><a href="">&nbsp;</a></div></div>
+                                            <div class="outer selected"><div class="inner b-4-1"><a></a></div></div>
+                                            <div class="outer"><div class="inner b-4-2"><a></a></div></div>
+                                            <div class="outer"><div class="inner b-4-3"><a></a></div></div>
+                                            <div class="outer"><div class="inner b-4-4"><a></a></div></div>
+                                            <div class="outer"><div class="inner b-4-5"><a></a></div></div>
                                         </div>
                                         <div class="i-info">
                                             <div class="collection-title">
@@ -282,14 +230,14 @@
                                     <div class="item-view">
                                         <div class="i-label">5</div>
                                         <div class="i-img">
-                                            <a href=""><img src="./images/best_5_1.png" alt="SPINNER 75/28 EXP"></a>
+                                            <a href="https://www.samsonite.co.kr/samsonite/enow/spinner-75/28-exp/ss-128498-1684.html"><img src="./images/b-5-1.png" alt="SPINNER 75/28 EXP"></a>
                                         </div>
                                     </div>
                                     <div class="item-des">
                                         <div class="i-color">
-                                            <div class="outer"><div class="inner b-5-1"><a href="">&nbsp;</a></div></div>
-                                            <div class="outer"><div class="inner b-5-2"><a href="">&nbsp;</a></div></div>
-                                            <div class="outer"><div class="inner b-5-3"><a href="">&nbsp;</a></div></div>
+                                            <div class="outer selected"><div class="inner b-5-1"><a></a></div></div>
+                                            <div class="outer"><div class="inner b-5-2"><a></a></div></div>
+                                            <div class="outer"><div class="inner b-5-3"><a></a></div></div>
                                         </div>
                                         <div class="i-info">
                                             <div class="collection-title">
@@ -311,13 +259,13 @@
                                     <div class="item-view">
                                         <div class="i-label">6</div>
                                         <div class="i-img">
-                                            <a href=""><img src="./images/best_6_1.png" alt="BACKPACK"></a>
+                                            <a href="https://www.samsonite.co.kr/samsonite-red/lawdon/backpack/ss-143734-1030.html"><img src="./images/b-6-1.png" alt="BACKPACK"></a>
                                         </div>
                                     </div>
                                     <div class="item-des">
                                         <div class="i-color">
-                                            <div class="outer"><div class="inner b-6-1"><a href="">&nbsp;</a></div></div>
-                                            <div class="outer"><div class="inner b-6-2"><a href="">&nbsp;</a></div></div>
+                                            <div class="outer selected"><div class="inner b-6-1"><a></a></div></div>
+                                            <div class="outer"><div class="inner b-6-2"><a></a></div></div>
                                         </div>
                                         <div class="i-info">
                                             <div class="collection-title">
@@ -339,13 +287,13 @@
                                     <div class="item-view">
                                         <div class="i-label">7</div>
                                         <div class="i-img">
-                                            <a href=""><img src="./images/best_7_1.png" alt="BRIEFCASE"></a>
+                                            <a href="https://www.samsonite.co.kr/pintano/%EB%B8%8C%EB%A6%AC%ED%94%84%EC%BC%80%EC%9D%B4%EC%8A%A4/ss-116848-1596.html"><img src="./images/b-7-1.png" alt="BRIEFCASE"></a>
                                         </div>
                                     </div>
                                     <div class="item-des">
                                         <div class="i-color">
-                                            <div class="outer"><div class="inner b-7-1"><a href="">&nbsp;</a></div></div>
-                                            <div class="outer"><div class="inner b-7-2"><a href="">&nbsp;</a></div></div>
+                                            <div class="outer selected"><div class="inner b-7-1"><a></a></div></div>
+                                            <div class="outer"><div class="inner b-7-2"><a></a></div></div>
                                         </div>
                                         <div class="i-info">
                                             <div class="collection-title">
@@ -367,13 +315,14 @@
                                     <div class="item-view">
                                         <div class="i-label">8</div>
                                         <div class="i-img">
-                                            <a href=""><img src="./images/best_8_1.png" alt="LUGGAGE COVER M"></a>
+                                            <a href="https://www.samsonite.co.kr/samsonite/travel-link-acc./foldable-luggage-cover-m/ss-57548-1090.html"><img src="./images/b-8-1.png" alt="LUGGAGE COVER M"></a>
                                         </div>
                                     </div>
                                     <div class="item-des">
                                         <div class="i-color">
-                                            <div class="outer"><div class="inner b-8-1"><a href="">&nbsp;</a></div></div>
-                                            <div class="outer"><div class="inner b-8-2"><a href="">&nbsp;</a></div></div>
+                                            <div class="outer selected"><div class="inner b-8-1"><a></a></div></div>
+                                            <div class="outer"><div class="inner b-8-2"><a></a></div></div>
+                                            <div class="outer"><div class="inner b-8-3"><a></a></div></div>
                                         </div>
                                         <div class="i-info">
                                             <div class="collection-title">
@@ -416,7 +365,7 @@
                             <div class="c-item">
                                 <div class="c-item-box">
                                     <div class="c-img">
-                                        <a href=""><img src="./images/collection_1_1.png" alt="STEM"></a>
+                                        <a href="https://www.samsonite.co.kr/samsonite/ss-134887-1041.html"><img src="./images/collection_1_1.png" alt="STEM"></a>
                                     </div>
                                     <div class="c-item-des">
                                         <div class="collection-title">
@@ -485,12 +434,12 @@
                                 <div class="item-box">
                                     <div class="item-view">
                                         <div class="i-img">
-                                            <a href=""><img src="./images/pick_1_1.png" alt="CROSSBODY"></a>
+                                            <a href="https://www.samsonite.co.kr/samsonite-red/lawdon/crossbody/ss-143735-1030.html"><img src="./images/p-1-1.png" alt="CROSSBODY"></a>
                                         </div>
                                     </div>
                                     <div class="item-des">
                                         <div class="i-color">
-                                            <div class="outer"><div class="inner p-1-1"><a href="">&nbsp;</a></div></div>
+                                            <div class="outer selected"><div class="inner p-1-1"><a></a></div></div>
                                         </div>
                                         <div class="i-info">
                                             <div class="collection-title">
@@ -509,12 +458,12 @@
                                 <div class="item-box">
                                     <div class="item-view">
                                         <div class="i-img">
-                                            <a href=""><img src="./images/pick_2_1.png" alt="SLING BAG"></a>
+                                            <a href="https://www.samsonite.co.kr/samsonite/wilgena/sling-bag/ss-144226-1041.html"><img src="./images/p-2-1.png" alt="SLING BAG"></a>
                                         </div>
                                     </div>
                                     <div class="item-des">
                                         <div class="i-color">
-                                            <div class="outer"><div class="inner p-2-1"><a href="">&nbsp;</a></div></div>
+                                            <div class="outer selected"><div class="inner p-2-1"><a></a></div></div>
                                         </div>
                                         <div class="i-info">
                                             <div class="collection-title">
@@ -530,13 +479,13 @@
                                 <div class="item-box">
                                     <div class="item-view">
                                         <div class="i-img">
-                                            <a href=""><img src="./images/pick_3_1.png" alt="TOTE"></a>
+                                            <a href="https://www.samsonite.co.kr/samsonite-red/latha/tote/ss-146102-1855.html"><img src="./images/p-3-1.png" alt="TOTE"></a>
                                         </div>
                                     </div>
                                     <div class="item-des">
                                         <div class="i-color">
-                                            <div class="outer"><div class="inner p-3-1"><a href="">&nbsp;</a></div></div>
-                                            <div class="outer"><div class="inner p-3-2"><a href="">&nbsp;</a></div></div>
+                                            <div class="outer selected"><div class="inner p-3-1"><a></a></div></div>
+                                            <div class="outer"><div class="inner p-3-2"><a></a></div></div>
                                         </div>
                                         <div class="i-info">
                                             <div class="collection-title">
@@ -551,8 +500,8 @@
                                 </div>
                             </div>
                             <div class="move-page">
-                                <a href=""><button type="button" class="btn more"><img src="./images/more-arrow.svg" class="more-arrow">관련 제품 더보기</button></a>
-                                <a href=""><button type="button" class="btn another"><img src="./images/more-arrow.svg" class="more-arrow">다른 조건으로 검색</button></a>
+                                <a><button type="button" class="btn more"><img src="./images/more-arrow.svg" class="more-arrow">관련 제품 더보기</button></a>
+                                <a href="https://www.samsonite.co.kr/product-finder.html"><button type="button" class="btn another"><img src="./images/more-arrow.svg" class="more-arrow">다른 조건으로 검색</button></a>
                             </div>
                         </div>
                     <div class="gradient-bg"/>
@@ -585,7 +534,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href="https://www.samsonite.co.kr/register" target="_blank" class="member-join">
+                    <a href="https://www.samsonite.co.kr/register"class="member-join">
                         <div class="banner-box right">
                             <div class="banner-container right">
                                 <div class="coupon">
@@ -610,8 +559,12 @@
                 <div class="event-wrap">
                         <div><a href=""><img src="./images/section-prev.svg" alt="이전 이벤트" class="prev-btn"></a></div>
                         <div class="event-box flex">
+                            <div class="e-label">마감임박</div>
                             <div class="e-poster">
-                                <a href="https://www.samsonite.co.kr/promotion/soev_22_2ndanniversary" target="_blank"><img src="./images/event_1.png" alt="사이트 오픈 2주년 행사"></a>
+
+                                <a href="https://www.samsonite.co.kr/promotion/soev_22_2ndanniversary">
+                                    <img src="./images/event_1.png" alt="사이트 오픈 2주년 행사">
+                                </a>
                             </div>
                             <div class="e-info">
                                 <span>ONLINE</span>
@@ -631,7 +584,7 @@
                 <div class="container">
                     <h3>NEWS</h3>
                     <div class="news-wrap flex">
-                        <a href="https://www.samsonite.co.kr/art-of-packing.html" target="_blank" class="discover">
+                        <a href="https://www.samsonite.co.kr/art-of-packing.html" class="discover">
                             <div class="news-box">
                                 <div class="news-img">
                                     <img src="./images/discover.png" alt="DISCOVER">
@@ -647,7 +600,7 @@
                                 </div>
                             </div>
                         </a>
-                        <a href="https://www.samsonite.co.kr/stores?showMap=true&horizontalView=true" target="_blank" class="store">
+                        <a href="https://www.samsonite.co.kr/stores?showMap=true&horizontalView=true" class="store">
                             <div class="news-box">
                                 <div class="news-img">
                                     <img src="./images/offline-store.png" alt="OFFLINE STORE">
@@ -673,7 +626,7 @@
                         <h3>쌤소나이트가<br>당신의 여정을 응원합니다</h3>
                         <p>최고의 제품을 위해 지속가능하고 혁신적인 재료와 생산 방법을 이용해<br>고객이 여행하는데 즐거움을 줄 수 있도록 노력합니다.</p>
                         <div class="move-page">
-                            <a href="https://www.samsonite.co.kr/brand-story.html" target="_blank"><button type="button" class="btn more"><img src="./images/more-arrow.svg" class="more-arrow">더보기</button></a>
+                            <a href="https://www.samsonite.co.kr/brand-story.html"><button type="button" class="btn more"><img src="./images/more-arrow.svg" class="more-arrow">더보기</button></a>
                         </div>
                     </div>
                 </div>
@@ -690,10 +643,10 @@
                                 viewBox="0 0 60 2" enable-background="new 0 0 60 2" xml:space="preserve"><rect width="60" height="2"/></svg>
                             </div>
                             <div class="sns-icon bk flex">
-                                <a href="https://blog.naver.com/samsoniter" target="_blank"><img src="./images/sns-blog.svg" alt="쌤소나이트 블로그"></a>
-                                <a href="https://www.facebook.com/KoreaSamsonite" target="_blank"><img src="./images/sns-facebook.svg" alt="쌤소나이트 페이스북"></a>
-                                <a href="https://www.instagram.com/samsonitered_kr" target="_blank"><img src="./images/sns-instagram.svg" alt="쌤소나이트 인스타그램"></a>
-                                <a href="https://www.youtube.com/user/KoreaSamsonite" target="_blank"><img src="./images/sns-youtube.svg" alt="쌤소나이트 유튜브"></a>
+                                <a href="https://blog.naver.com/samsoniter"><img src="./images/sns-blog.svg" alt="쌤소나이트 블로그"></a>
+                                <a href="https://www.facebook.com/KoreaSamsonite"><img src="./images/sns-facebook.svg" alt="쌤소나이트 페이스북"></a>
+                                <a href="https://www.instagram.com/samsonitered_kr"><img src="./images/sns-instagram.svg" alt="쌤소나이트 인스타그램"></a>
+                                <a href="https://www.youtube.com/user/KoreaSamsonite"><img src="./images/sns-youtube.svg" alt="쌤소나이트 유튜브"></a>
                             </div>
                         </div>
                         <div class="sns-grid">
@@ -713,11 +666,11 @@
         <footer>
             <div class="footer-wrap">
                 <div class="news-letter">
-                    <form name="subscribe" class="subscribe" action="#">
+                    <form name="subscribe" class="subscribe">
                         <h2>쌤소나이트의 최신 소식을 받아보세요</h2>
                         <div class="email-box">
-                            <input type="email" placeholder="ex) id@samsonite.co.kr">
-                            <button></button>
+                            <input type="email" id="email" placeholder="ex) id@samsonite.co.kr" required>
+                            <input type="submit" value="">
                         </div>
                     </form>
                 </div>
@@ -729,46 +682,46 @@
                                     <div class="m1">
                                         <h5>고객지원</h5>
                                         <ul>
-                                            <li><a href="">배송</a></li>
-                                            <li><a href="">반품 및 환불</a></li>
-                                            <li><a href="">단체 구매 · 대리점 개설</a></li>
-                                            <li><a href="">고객센터</a></li>
-                                            <li><a href="">Contact Us</a></li>
+                                            <li><a href="https://www.samsonite.co.kr/shipping-and-delivery.html">배송</a></li>
+                                            <li><a href="https://www.samsonite.co.kr/returns-and-exchanges.html">반품 및 환불</a></li>
+                                            <li><a href="https://www.samsonite.co.kr/mass-order.html">단체 구매 · 대리점 개설</a></li>
+                                            <li><a href="https://www.samsonite.co.kr/customerscenter">고객센터</a></li>
+                                            <li><a href="https://www.samsonite.co.kr/contact-us.html">Contact Us</a></li>
                                         </ul>
                                     </div>
                                     <div class="m2">
                                         <h5>회사소개</h5>
                                         <ul>
-                                            <li><a href="">브랜드 스토리</a></li>
-                                            <li><a href="">매장 안내</a></li>
-                                            <li><a href="">투자정보</a></li>
-                                            <li><a href="">지속가능성</a></li>
+                                            <li><a href="https://www.samsonite.co.kr/brand-story.html">브랜드 스토리</a></li>
+                                            <li><a href="https://www.samsonite.co.kr/stores?showMap=true&horizontalView=true">매장 안내</a></li>
+                                            <li><a href="https://corporate.samsonite.com/en/home.html">투자정보</a></li>
+                                            <li><a href="https://www.samsonite.co.kr/sustainability.html">지속가능성</a></li>
                                         </ul>
                                     </div>
                                     <div class="m3">
                                         <h5>내 계정</h5>
                                         <ul>
-                                            <li><a href="">주문 상태 조회</a></li>
-                                            <li><a href="">로그인하기</a></li>
+                                            <li><a href="https://www.samsonite.co.kr/ordertracking">주문 상태 조회</a></li>
+                                            <li><a href="https://www.samsonite.co.kr/login?rurl=1">로그인하기</a></li>
                                         </ul>
                                     </div>
                                     <div class="m4">
                                         <h5>기타</h5>
                                         <ul>
-                                            <li><a href="">여행가방 가이드</a></li>
-                                            <li><a href="">여행가방 잠금장치 설정</a></li>
-                                            <li><a href="">사이트맵</a></li>
-                                            <li><a href="">WORLDWIDE SITE</a></li>
+                                            <li><a href="https://www.samsonite.co.kr/product-finder.html">여행가방 가이드</a></li>
+                                            <li><a href="https://www.samsonite.co.kr/customer-center/notice-board/how-to-use-padlock.html">여행가방 잠금장치 설정</a></li>
+                                            <li><a href="https://www.samsonite.co.kr/sitemap.html">사이트맵</a></li>
+                                            <li><a href="https://www.samsonite.com/home/home.html">WORLDWIDE SITE</a></li>
                                         </ul>
                                     </div>
                                 </div>
                                 <div class="brand-partner">
                                     <h4>브랜드 파트너</h4>
                                     <div class="brand-box">
-                                        <div><a href="https://www.americantourister.co.kr" target="_blank"><img src="./images/brand_american-tourister.svg" alt="american tourister" class="american-tourister"></a></div>
-                                        <div><a href="https://kamiliant.com" target="_blank"><img src="./images/brand_kamiliant.svg" alt="kamiliant" class="kamiliant"></a></div>
-                                        <div><a href="https://www.gregorypacks.co.kr" target="_blank"><img src="./images/brand_gregoty.svg" alt="gregory" class="gregory"></a></div>
-                                        <div><a href="https://shop.highsierra.com" target="_blank"><img src="./images/brand_high-sierra.svg" alt="high sierra" class="high-sierra"></a></div>
+                                        <div><a href="https://www.americantourister.co.kr"><img src="./images/brand_american-tourister.svg" alt="american tourister" class="american-tourister"></a></div>
+                                        <div><a href="https://kamiliant.com"><img src="./images/brand_kamiliant.svg" alt="kamiliant" class="kamiliant"></a></div>
+                                        <div><a href="https://www.gregorypacks.co.kr"><img src="./images/brand_gregoty.svg" alt="gregory" class="gregory"></a></div>
+                                        <div><a href="https://shop.highsierra.com"><img src="./images/brand_high-sierra.svg" alt="high sierra" class="high-sierra"></a></div>
                                     </div>
                                 </div>
                             </div>
@@ -777,7 +730,7 @@
                                     <h3>쌤소나이트 코리아(주)</h3>
                                     <div class="samsonite-info">
                                         <address>서울특별시 강남구 테헤란로 522 홍우빌딩 12층</address>
-                                        <p class="c-num"><span>사업자등록번호 : 218-81-21342</span><a href="https://www.ftc.go.kr/www/bizCommList.do?key=232" target="_blank">사업자 정보 확인</a></p>
+                                        <p class="c-num"><span>사업자등록번호 : 218-81-21342</span><a href="https://www.ftc.go.kr/www/bizCommList.do?key=232">사업자 정보 확인</a></p>
                                         <p class="s-num">통신판매신고번호 : 제 2008-서울강남-00754호</p>
                                         <p class="admin"><span>대표이사 : 최원식</span><span>개인정보 관리자 : 최원식</span></p>
                                         <p class="copyright">모든 저작권은 Samsonite IP Holdings S.àr.l 에게 있습니다.</p>
@@ -805,17 +758,17 @@
                                         </div>
                                     </div>
                                     <div class="sns-icon wh flex">
-                                        <a href="https://blog.naver.com/samsoniter" target="_blank"><img src="./images/sns-blog.svg" alt="쌤소나이트 블로그"></a>
-                                        <a href="https://www.facebook.com/KoreaSamsonite" target="_blank"><img src="./images/sns-facebook.svg" alt="쌤소나이트 페이스북"></a>
-                                        <a href="https://www.instagram.com/samsonitered_kr" target="_blank"><img src="./images/sns-instagram.svg" alt="쌤소나이트 인스타그램"></a>
-                                        <a href="https://www.youtube.com/user/KoreaSamsonite" target="_blank"><img src="./images/sns-youtube.svg" alt="쌤소나이트 유튜브"></a>
+                                        <a href="https://blog.naver.com/samsoniter"><img src="./images/sns-blog.svg" alt="쌤소나이트 블로그"></a>
+                                        <a href="https://www.facebook.com/KoreaSamsonite"><img src="./images/sns-facebook.svg" alt="쌤소나이트 페이스북"></a>
+                                        <a href="https://www.instagram.com/samsonitered_kr"><img src="./images/sns-instagram.svg" alt="쌤소나이트 인스타그램"></a>
+                                        <a href="https://www.youtube.com/user/KoreaSamsonite"><img src="./images/sns-youtube.svg" alt="쌤소나이트 유튜브"></a>
                                     </div>
                                 </div>
                             </div>
                             <div class="row-3 flex">
                                 <ul class="flex">
-                                    <li><a href="https://www.samsonite.co.kr/privacy-policy.html" target="_blank">이용약관</a></li>
-                                    <li><a href="https://www.samsonite.co.kr/personal-information-collection-statement.html" target="_blank">개인정보 처리 방침</a></li>
+                                    <li><a href="https://www.samsonite.co.kr/privacy-policy.html">이용약관</a></li>
+                                    <li><a href="https://www.samsonite.co.kr/personal-information-collection-statement.html">개인정보 처리 방침</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -827,10 +780,10 @@
             <a class="main-btn"><img src="./images/plus.svg" alt="플로팅 메뉴"></a>
             <ul class="inside-box">
                 <li>
-                    <a href="https://api.happytalk.io/api/kakao/chat_open?yid=%40%EC%8C%A4%EC%86%8C%EB%82%98%EC%9D%B4%ED%8A%B8%EA%B3%B5%EC%8B%9D%EC%98%A8%EB%9D%BC%EC%9D%B8%EB%AA%B0&site_id=1000216913&category_id=66035&division_id=66036" target="_blank" class="talk-btn"><img src="./images/talk.svg" alt="문의하기"></a>
+                    <a href="https://api.happytalk.io/api/kakao/chat_open?yid=%40%EC%8C%A4%EC%86%8C%EB%82%98%EC%9D%B4%ED%8A%B8%EA%B3%B5%EC%8B%9D%EC%98%A8%EB%9D%BC%EC%9D%B8%EB%AA%B0&site_id=1000216913&category_id=66035&division_id=66036" class="talk-btn hidden"><img src="./images/talk.svg" alt="문의하기"></a>
                 </li>
                 <li>
-                    <a href="#top" class="top-btn"><img src="./images/top.svg" alt="위로가기"></a>
+                    <a href="#top" class="top-btn hidden"><img src="./images/top.svg" alt="위로가기"></a>
                 </li>
             </ul>
         </div>
